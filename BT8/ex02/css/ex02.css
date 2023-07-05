@@ -1,0 +1,233 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.form-cart {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.shopping-cart {
+   min-width: 450px;
+}
+
+.shopping-cart .shopping-cart-mini {
+    background: #f3f3f3;
+}
+
+
+.shopping-cart-mini .menu {
+    padding: 20px 25px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.menu p::after {
+    content: '4';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: blue;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    top: 10px;
+    left: 40%;
+}
+
+.list-item {
+    overflow: auto;
+    height: 300px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.714); 
+    border-radius: 10px;
+}
+  
+.cart-list {
+    padding: 30px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cart-list .cart-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+.cart-item .image {
+    width: 95px;
+    height: 95px;
+    background-color: #f8f8f8;
+}
+
+.cart-item .image img {
+    width: 100%;
+    height: 100%;
+}
+
+.cart-item::after {
+    content: "\f00d";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+
+
+/* products-detail */
+.products-detail {
+    display: flex;
+    width: 300px;
+    flex-wrap: wrap;
+    margin-left: 25px;
+}
+
+.description {
+    width: 100%;
+}
+.quantity {
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+    background: white; 
+    float: left;
+    border-radius: 25px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.quantity span {
+    width: 40%;
+    display: block;
+    height: 30px;
+    position: relative;
+    float: left;
+}
+.quantity input {
+    width: 20%;
+    height: 30px;
+    text-align: center;
+    border: none; 
+    float: left;
+}
+
+.quantity span::before, .quantity span::after {
+    content: '';
+    position: absolute;
+    background-color: #667780;
+    height: 2px;
+    width: 9px;
+    top: 50%;
+    left: 50%;
+    margin-top: -1px;
+    margin-left: -5px;
+}
+
+.quantity span.plus::after {
+    transform: rotate(90deg);
+}
+
+.total-price {
+    margin-left: 60px;
+    padding: 15px;
+}
+
+.subtotal {
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    margin-bottom: 10px;
+    padding: 20px 30px 5px 30px;
+}
+
+.subtotal .subtotal-text p{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.subtotal span {
+    font-size: 0.9rem;
+    display: block;
+    color: rgba(0, 0, 0, 0.621);
+}
+
+.subtotal .subtotal-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color:  #ee7b56;
+}
+
+.botton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    row-gap: 15px;
+}
+
+.botton .view {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid #cbcbcb;
+    font-size: 1.1rem;
+    color: #cbcbcb;
+    background: white;
+}
+.botton .add {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    border: 2px solid #405ff2;
+    color: white;
+    background: #405ff2;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+.footer i {
+    font-size: 2rem;
+    color: #405ff2;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 1px solid #405ff2;
+    text-align: center;
+    line-height: 65px;
+}
+
+.footer span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}

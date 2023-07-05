@@ -1,0 +1,149 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* h1 */
+h1, p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+form {
+    text-align: center;
+    width: 1000px;
+    margin: auto;
+    background: 
+    #e8e8e8;
+}
+/* form */
+i {
+    color: #999;
+    font-size: 0.3rem;
+    margin-right: 0.5rem;
+    position: absolute;
+    top: 35%;
+    left: 87%;
+}
+.form-detail {
+    width: 1000px;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.inputGroup {
+    position: relative;
+    width: 330px;
+    height: 45px;
+}
+
+.inputGroup input {
+    width: 100%;
+    padding: 1.2rem;
+    padding-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+    height: 100%;
+    outline: none;
+}
+
+.inputGroup label {
+    position: absolute;
+    top: -4%;
+    left: 0;
+    padding: 1rem 1.2rem;
+    color: #999;
+    transition: all 0.3s ease;
+}
+
+.inputGroup input:focus ~ label {
+    transform: translateY(-20%) scale(0.8);
+    padding: 0.8rem;
+}
+.inputGroup input:focus {
+    border-color: rgb(150, 150, 200);
+}
+
+.inputGroup input:valid ~ label {
+    transform: translateY(-20%) scale(0.8);
+    padding: 0.8rem;
+}
+
+.inputGroup input:valid {
+    border-color: rgb(150, 150, 200);
+}
+
+
+/* select */
+.selection {
+    width: 330px;
+    height: 45px; 
+}
+
+.selection select {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+    height: 100%;
+    padding-left: 1rem;
+    color: #999;
+    font-size: 1rem;
+    outline: none;
+}
+.selection select:focus {
+    border-color: rgb(150, 150, 200);
+}
+
+/* textarea */
+.message {
+    width: 680px;
+    height: 150px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    position: relative;
+}
+
+.message label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #999;
+    transition: all 0.3s ease;
+    padding: 0.9rem;
+}
+.message textarea {
+    color: #999;
+    padding: 1.2rem;
+}
+.message:focus {
+    border-color: rgb(150, 150, 200);
+}
+.message:focus ~ label {
+    transform: translateY(-25%) scale(0.8);
+    padding-left: 0.8rem;
+}
+.message:valid ~ label {
+    transform: translateY(-25%) scale(0.8);
+    padding-left: 0.8rem;
+}
+/* btn */
+.btn {
+    padding: 20px 25px;
+    border-radius: 25px;
+    border: none;
+    line-height: 0.5;
+    font-size: 1rem;
+    color: white;
+    background: #4c76d8;
+    margin: 20px;
+
+}

@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Serif', serif;
+}
+
+.header {
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.header p {
+    margin-top: 15px;
+    font-size: 0.85rem;
+}
+
+.services-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px 10px;
+    margin-top: 40px;
+}
+
+.services-list img {
+    width: 80px;
+    height: 80px;
+}
+
+.services-detail {
+    width: 400px;
+    text-align: center;
+    position: relative;
+    height: 270px;
+}
+.info {
+    margin-top: 10px
+}
+.info {
+    font-size: 0.85rem;
+}
+.info h2 {
+    margin-bottom: 10px;
+}
+
+.services-list .services-detail .btn {
+    background-color: #28378d;
+    padding: 13px 20px;
+    border: none;
+    position: absolute;
+    bottom: 0;
+    right: 137px;
+    left: 137px;
+}
+
+
+.services-list .services-detail .btn a {
+    color: #fff;
+    text-decoration: none;
+}
