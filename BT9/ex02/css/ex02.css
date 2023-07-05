@@ -34,7 +34,6 @@ a {
 }
 
 .item {
-    /* flex-basis: calc(100% / 3 - 40px); */
     width: calc(100% / 3 - 40px);
     padding: 15px;
     border: 1px solid #e5e5e5;
