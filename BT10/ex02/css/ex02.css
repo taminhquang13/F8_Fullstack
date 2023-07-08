@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f1f1f1;
+}
+
+.content {
+    width: fit-content;
+    margin: 100px auto;
+}
+
+.item-list {
+    font-size: 0;  
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.145);
+}
+
+.detail {
+    width: 765px;
+    border-top: none;
+    background-color: white ;
+}
+
+.products {
+    display: inline-block;
+    padding: 5px;
+    border-right: 1px solid rgba(0, 0, 0, 0.145);
+}
+
+.products:nth-of-type(4) {
+    border-right: none;
+}
+
+.products p {
+    font-size: 1.2rem;
+    padding: 18px 12px;
+    color: black;
+    transition: 0.3s linear;
+    cursor: pointer;
+}
+
+.detail {
+    overflow-x: auto;
+    transition: 0.2s linear;
+}
+
+.info {
+    padding: 20px 20px;
+    width: 790px;
+}
+
+.info h2 {
+    font-size: 2rem;
+    padding-left: 8px;
+}
+
+.info p {
+    font-size: 1.1rem;
+    padding: 8px;
+    line-height: 1.5;
+}
+input {
+    display: none;
+}
+
+.detail {
+    display: none;
+}
+
+input[id="slideshow"]:checked ~ .item-list .products:nth-of-type(1) p {
+    color: white;
+    background-color: #4298db;
+}
+input[id="levenshtein"]:checked ~ .item-list .products:nth-of-type(2) p {
+    color: white;
+    background-color: #4298db;
+}
+input[id="progresso"]:checked ~ .item-list .products:nth-of-type(3) p {
+    color: white;
+    background-color: #4298db;
+}
+input[id="php"]:checked ~ .item-list .products:nth-of-type(4) p {
+    color: white;
+    background-color: #4298db;
+}
+
+input[id="slideshow"]:checked ~ .detail-slideshow {
+    display: block;
+}
+input[id="levenshtein"]:checked ~ .detail-levenshtein {
+    display: block;
+}
+input[id="progresso"]:checked ~ .detail-progresso {
+    display: block;
+}
+input[id="php"]:checked ~ .detail-php {
+    display: block;
+}
+
+input:checked ~ .detail{
+    animation: fadeInUp 0.3s;
+}
