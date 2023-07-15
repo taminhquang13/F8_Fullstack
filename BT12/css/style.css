@@ -46,7 +46,7 @@
   border-radius: 12px;
   background-color: white;
   transition: 0.6s ease-in-out;
-  margin-top: 113px;
+  margin-top: 105px;
   width: 484px;
   padding: 64px;
   z-index: 1;
@@ -74,8 +74,8 @@
   margin-top: 76px;
   display: flex;
   flex-direction: column;
-  row-gap: 28px;
-  margin-bottom: 40px;
+  row-gap: 25px;
+  margin-bottom: 39px;
 }
 .form-box .form-content .form-under {
   display: flex;
@@ -358,10 +358,10 @@
   width: 100%;
   height: 100%;
   background: url(../img/landing-background.jpg) no-repeat 0;
+  background-size: cover;
   position: fixed;
   top: 0;
   left: 0;
-  background-size: cover;
 }
 .container .landing .landing-bg-right {
   background: url(../img/dot-texture.png) repeat 0 0 white;
@@ -466,6 +466,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow: hidden;
+}
+
 input[id=login]:checked ~ .landing-info .switch-btn .toggle-login {
   background-color: white;
   color: #3e3f5e;
@@ -501,17 +505,75 @@ input[id=register]:checked ~ .landing-form .form-box-register {
 }
 
 @media screen and (max-width: 1500px) {
-  .landing .landing-info {
-    position: absolute;
-    top: 16%;
-    left: 6%;
-    width: 584px;
+  .container .landing .landing-bg-right {
+    display: none;
   }
-  .landing .landing-form {
+  .container .landing .landing-info {
+    left: 6%;
+  }
+  .container .landing .landing-info .landing-info-txt {
+    margin-top: -8px;
+  }
+  .container .landing .landing-info .switch-btn {
+    margin-top: 40px;
+  }
+  .container .landing .landing-form {
     right: 80px;
   }
-  .landing-bg-right {
+  .container .landing .landing-form .form-box-register {
+    margin-top: 45px;
+  }
+}
+@media screen and (max-width: 1365px) {
+  .container .landing {
+    padding: 80px 0 100px;
+    position: static;
+  }
+  .container .landing .landing-info {
+    width: 100%;
+    position: static;
+  }
+  .container .landing .landing-info .landing-info-txt {
     display: none;
+  }
+  .container .landing .landing-info .switch-btn {
+    margin-top: 4px;
+  }
+  .container .landing .landing-form {
+    width: 100%;
+    position: static;
+    margin: 70px auto 0;
+  }
+  .container .landing .landing-form .form-box {
+    margin: 0 auto;
+    position: static;
+  }
+  .container .landing .landing-form .landing-roket {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container .landing .landing-form .form-box {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container .landing .landing-info .landing-title-bottom {
+    font-size: 3.75rem;
+    margin-top: -22px;
+  }
+  .container .landing .landing-info .switch-btn {
+    width: 90%;
+    margin: 13px auto 0;
+  }
+  .container .landing .landing-info .switch-btn .toggle-btn {
+    width: 50%;
+  }
+  .container .landing .landing-form {
+    margin-top: 60px;
+  }
+  .container .landing .landing-form .form-box {
+    width: 90%;
   }
 }
 

@@ -10,6 +10,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+html {
+    overflow: hidden;
+}
 input[id=login]:checked ~ .landing-info .switch-btn .toggle-login {
     background-color: white;
     color: #3e3f5e;
@@ -43,22 +46,101 @@ input[id=register]:checked ~ .landing-form .form-box-register {
     opacity: 1;
 }
 
+@media screen and (mix-width: 1500px) {
 
+}
 
 @media screen and (max-width: 1500px) {
-    .landing {
-        .landing-info {
-            position: absolute;
-            top: 16%;
-            left: 6%;
-            width: 584px;
+    .container {
+        .landing {
+            .landing-bg-right {
+                display: none;
+            }
+            .landing-info {
+                left: 6%;
+                .landing-info-txt {
+                    margin-top: -8px;
+                }
+                .switch-btn {
+                    margin-top: 40px;
+                }
+            }
+            .landing-form {
+                right: 80px;
+                .form-box-register {
+                    margin-top: 45px;
+                }
+            }
         }
-        .landing-form {
-            right: 80px;
+    } 
+}
+
+@media screen and (max-width: 1365px) {
+    .container {
+        .landing {
+            padding: 80px 0 100px;
+            position: static;
+            .landing-info {
+                width: 100%;
+                position: static;
+                .landing-info-txt {
+                    display: none;
+                }
+                .switch-btn {
+                    margin-top: 4px;
+                }
+            }
+            .landing-form {
+                width: 100%;
+                position: static;
+                margin: 70px auto 0;
+                .form-box {
+                    margin: 0 auto;
+                    position: static;
+                }
+                .landing-roket{
+                    display: none;
+                }
+            }
+        }
+    } 
+
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        .landing {
+            .landing-form {
+                .form-box {
+                    width: 90%;
+                }
+            }
         }
     }
-    .landing-bg-right {
-        display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        .landing {
+            .landing-info {
+                .landing-title-bottom {
+                    font-size: 3.75rem;
+                    margin-top: -22px;
+                }
+                .switch-btn {
+                    width: 90%;
+                    margin: 13px auto 0;
+                    .toggle-btn {
+                        width: 50%;
+                    }
+                }
+            }
+            .landing-form {
+                margin-top: 60px;
+                .form-box {
+                    width: 90%;
+                }
+            }
+        }
     }
-    
 }

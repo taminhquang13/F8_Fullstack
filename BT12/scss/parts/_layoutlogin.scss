@@ -2,7 +2,7 @@
     border-radius: 12px;
     background-color: white;
     transition: 0.6s ease-in-out;
-    margin-top: 113px;
+    margin-top: 105px;
     width: 484px;
     padding: 64px;
     z-index: 1;
@@ -29,8 +29,8 @@
         margin-top: 76px;
         display: flex;
         flex-direction: column;
-        row-gap: 28px;
-        margin-bottom: 40px;
+        row-gap: 25px;
+        margin-bottom: 39px;
         .form-under {
             display: flex;
             justify-content: space-between;
@@ -102,7 +102,7 @@
                 }
             }
         }
-        input[id='checkbox']:checked ~ .checkbox-title .box-check .checkbox-icon i {
+        input[id=checkbox]:checked ~ .checkbox-title .box-check .checkbox-icon i {
             display: block;
             transition: 0.2s linear;
         }         
