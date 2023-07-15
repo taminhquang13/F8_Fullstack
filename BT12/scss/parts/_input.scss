@@ -1,8 +1,8 @@
 .input-group {
     position: relative;
-   }
+}
    
-   .input {
+.input {
     display: block;
     font-family: Rajdhani,sans-serif;
     background-color: #fff;
@@ -15,9 +15,9 @@
     font-weight: 700;
     height: 54px;
     padding: 0 18px;
-   }
+}
    
-   .user-label {
+.user-label {
     color: #3e3f5e;
     pointer-events: none;
     font-family: Rajdhani,sans-serif;
@@ -28,16 +28,17 @@
     left: 20px;
     top: 20px;
     transition: all .3s ease-in-out;
-   }
+}
    
-   .input:focus, input:valid {
+.input:focus, input:valid {
     outline: none;
     border: 1.5px solid #1a73e8;
-   }
+}
    
-   .input:focus ~ label, input:valid ~ label {
-    transform: translateY(-28px) scale(0.8) translateX(-10px);
+.input:focus ~ label, input:valid ~ label {
+    transform: translateY(-28px);
     background-color: white;
-    padding: 0 6px;
     color: #adafca;
-   }
+    font-size: 13px;
+    
+}

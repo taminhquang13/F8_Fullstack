@@ -36,10 +36,10 @@
 }
 
 .input:focus ~ label, input:valid ~ label {
-  transform: translateY(-28px) scale(0.8) translateX(-10px);
+  transform: translateY(-28px);
   background-color: white;
-  padding: 0 6px;
   color: #adafca;
+  font-size: 13px;
 }
 
 .form-box {
