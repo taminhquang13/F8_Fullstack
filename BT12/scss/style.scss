@@ -1,0 +1,64 @@
+@import './parts/_input.scss';
+
+@import './parts/layoutlogin';
+
+@import './parts/layoutregister';
+
+@import './parts/landinglayout';
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+input[id=login]:checked ~ .landing-info .switch-btn .toggle-login {
+    background-color: white;
+    color: #3e3f5e;
+}
+input[id=register]:checked ~ .landing-info .switch-btn .toggle-register {
+    background-color: white;
+    color: #3e3f5e;
+}
+
+input[id=login]:checked ~ .landing-form .form-box {
+    transform: translate(0%, 0px);
+    visibility: visible;
+    opacity: 1;
+}
+
+input[id=login]:checked ~ .landing-form .form-box-register {
+    transform: translate(50%, 0px);
+    visibility: hidden;
+    opacity: 0;
+}
+
+input[id=register]:checked ~ .landing-form .form-box {
+    transform: translate(50%, 0px);
+    visibility: hidden;
+    opacity: 0;
+}
+
+input[id=register]:checked ~ .landing-form .form-box-register {
+    transform: translate(0%, 0px);
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+@media screen and (max-width: 1500px) {
+    .landing {
+        .landing-info {
+            position: absolute;
+            top: 16%;
+            left: 6%;
+            width: 584px;
+        }
+        .landing-form {
+            right: 80px;
+        }
+    }
+    .landing-bg-right {
+        display: none;
+    }
+    
+}

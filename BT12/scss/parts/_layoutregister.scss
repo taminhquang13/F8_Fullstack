@@ -1,0 +1,110 @@
+.form-box-register {
+    border-radius: 12px;
+    background-color: white;
+    transition: 0.6s ease-in-out;
+    margin-top: 60px;
+    width: 484px;
+    padding: 64px;
+    z-index: 2;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    left: 0;
+    transform: translate(50%, 0px);
+    box-shadow: 0 0 60px 0 rgba(94,92,154,.12);
+    .landing-roket {
+        position: absolute;
+        width: 160px;
+        height: 156px;
+        top: -14px;
+        left: -80px;
+    }
+    .form-box-header {
+        font-size: 26px;
+        line-height: 26px;
+        font-weight: 700;
+        color: #3e3f5e;
+        font-family: 'Rajdhani', sans-serif;
+        text-align: center;
+    }
+    .form-content {
+        margin-top: 76px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 28px;
+        margin-bottom: 40px;
+        .form-under {
+            display: flex;
+            justify-content: space-between;
+            .form-under-item {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .checkbox-title-register {
+                    display: flex;
+                    align-items: center;
+                    label {
+                        display: block;
+                        padding-left: 15px;
+                        color: #3e3f5e;
+                        font-size: 14px;
+                        font-weight: 700;
+                        line-height: 22px;
+                        font-family: Rajdhani,sans-serif;
+                    }
+                    .box-check-register {
+                        width: 22px;
+                        height: 22px;
+                        border: 1px solid #dedeea;
+                        border-radius: 7px;
+                        background-color: #fff;
+                        position: relative;
+                        .checkbox-icon i {
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            display: none;
+                            width: 22px;
+                            height: 22px;
+                            border-radius: 6px;
+                            font-size: 16px;
+                            text-align: center;
+                            line-height: 22px;
+                            color: white;
+                            background-color: #23d2e2;
+                            transition: 0.2s linear;
+                        }
+                    }
+                }
+                .btn {
+                    display: inline-block;
+                    border-radius: 10px;
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-align: center;
+                    cursor: pointer;
+                    height: 54px;
+                    width: 100%;
+                    border: none;
+                    color: white;
+                    background-color: #23d2e2;
+                    box-shadow: 4px 7px 12px 0 rgba(97,93,250,.2);
+                }
+            }
+        }
+        input[id='checkbox-register']:checked ~ .checkbox-title-register .box-check-register .checkbox-icon i {
+            display: block;
+            transition: 0.2s linear;
+        }         
+    }
+    .contact-txt {
+        display: block;
+        color: #3e3f5e;
+        font-family: Rajdhani,sans-serif;
+        font-size: 14px;
+        a {
+            text-decoration: none;
+            color: #23d2e2;
+        }
+    }
+}

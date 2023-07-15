@@ -1,0 +1,43 @@
+.input-group {
+    position: relative;
+   }
+   
+   .input {
+    display: block;
+    font-family: Rajdhani,sans-serif;
+    background-color: #fff;
+    border: 1px solid #dedeea;
+    color: #3e3f5e;
+    transition: border-color .2s ease-in-out;
+    width: 100%;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    height: 54px;
+    padding: 0 18px;
+   }
+   
+   .user-label {
+    color: #3e3f5e;
+    pointer-events: none;
+    font-family: Rajdhani,sans-serif;
+    color: #adafca;
+    font-size: 1rem;
+    font-weight: 600;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    transition: all .3s ease-in-out;
+   }
+   
+   .input:focus, input:valid {
+    outline: none;
+    border: 1.5px solid #1a73e8;
+   }
+   
+   .input:focus ~ label, input:valid ~ label {
+    transform: translateY(-28px) scale(0.8) translateX(-10px);
+    background-color: white;
+    padding: 0 6px;
+    color: #adafca;
+   }

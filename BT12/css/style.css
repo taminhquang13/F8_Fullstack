@@ -1,0 +1,518 @@
+.input-group {
+  position: relative;
+}
+
+.input {
+  display: block;
+  font-family: Rajdhani, sans-serif;
+  background-color: #fff;
+  border: 1px solid #dedeea;
+  color: #3e3f5e;
+  transition: border-color 0.2s ease-in-out;
+  width: 100%;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  height: 54px;
+  padding: 0 18px;
+}
+
+.user-label {
+  color: #3e3f5e;
+  pointer-events: none;
+  font-family: Rajdhani, sans-serif;
+  color: #adafca;
+  font-size: 1rem;
+  font-weight: 600;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.input:focus, input:valid {
+  outline: none;
+  border: 1.5px solid #1a73e8;
+}
+
+.input:focus ~ label, input:valid ~ label {
+  transform: translateY(-28px) scale(0.8) translateX(-10px);
+  background-color: white;
+  padding: 0 6px;
+  color: #adafca;
+}
+
+.form-box {
+  border-radius: 12px;
+  background-color: white;
+  transition: 0.6s ease-in-out;
+  margin-top: 113px;
+  width: 484px;
+  padding: 64px;
+  z-index: 1;
+  position: absolute;
+  visibility: visible;
+  left: 0;
+  box-shadow: 0 0 60px 0 rgba(94, 92, 154, 0.12);
+}
+.form-box .landing-roket {
+  position: absolute;
+  width: 160px;
+  height: 156px;
+  top: -68px;
+  left: -80px;
+}
+.form-box .form-box-header {
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #3e3f5e;
+  font-family: "Rajdhani", sans-serif;
+  text-align: center;
+}
+.form-box .form-content {
+  margin-top: 76px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 28px;
+  margin-bottom: 40px;
+}
+.form-box .form-content .form-under {
+  display: flex;
+  justify-content: space-between;
+}
+.form-box .form-content .form-under .form-under-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.form-box .form-content .form-under .form-under-item .checkbox-title {
+  display: flex;
+  align-items: center;
+}
+.form-box .form-content .form-under .form-under-item .checkbox-title label {
+  display: block;
+  padding-left: 15px;
+  color: #3e3f5e;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  font-family: Rajdhani, sans-serif;
+}
+.form-box .form-content .form-under .form-under-item .checkbox-title .box-check {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #dedeea;
+  border-radius: 7px;
+  background-color: #fff;
+  position: relative;
+}
+.form-box .form-content .form-under .form-under-item .checkbox-title .box-check .checkbox-icon i {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 22px;
+  color: white;
+  background-color: #23d2e2;
+  transition: 0.2s linear;
+}
+.form-box .form-content .form-under .form-under-item .form-link {
+  color: #adafca;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 22px;
+  text-decoration: none;
+}
+.form-box .form-content .form-under .form-under-item .form-link:hover {
+  color: #23d2e2;
+  background-color: none;
+}
+.form-box .form-content .form-under .form-under-item .btn {
+  display: inline-block;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  height: 54px;
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: #615dfa;
+  box-shadow: 4px 7px 12px 0 rgba(97, 93, 250, 0.2);
+}
+.form-box .form-content input[id=checkbox]:checked ~ .checkbox-title .box-check .checkbox-icon i {
+  display: block;
+  transition: 0.2s linear;
+}
+.form-box .line-txt {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  position: relative;
+}
+.form-box .line-txt:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 70px;
+  height: 1px;
+  background-color: #dedeea;
+}
+.form-box .line-txt:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 70px;
+  height: 1px;
+  background-color: #dedeea;
+}
+.form-box .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 15px;
+  margin-top: 40px;
+}
+.form-box .social-link .social-link-fb {
+  display: block;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  text-align: center;
+  line-height: 40px;
+  background: #3763d2;
+}
+.form-box .social-link .social-link-fb i {
+  font-size: 16px;
+  color: white;
+}
+.form-box .social-link .social-link-twitter {
+  display: block;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  text-align: center;
+  line-height: 40px;
+  background: #1abcff;
+}
+.form-box .social-link .social-link-twitter i {
+  font-size: 16px;
+  color: white;
+}
+.form-box .social-link .social-link-twitch {
+  display: block;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  text-align: center;
+  line-height: 40px;
+  background: #7b5dfa;
+}
+.form-box .social-link .social-link-twitch i {
+  font-size: 16px;
+  color: white;
+}
+.form-box .social-link .social-link-youtube {
+  display: block;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  text-align: center;
+  line-height: 40px;
+  background: #fd434f;
+}
+.form-box .social-link .social-link-youtube i {
+  font-size: 16px;
+  color: white;
+}
+
+.form-box-register {
+  border-radius: 12px;
+  background-color: white;
+  transition: 0.6s ease-in-out;
+  margin-top: 60px;
+  width: 484px;
+  padding: 64px;
+  z-index: 2;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  left: 0;
+  transform: translate(50%, 0px);
+  box-shadow: 0 0 60px 0 rgba(94, 92, 154, 0.12);
+}
+.form-box-register .landing-roket {
+  position: absolute;
+  width: 160px;
+  height: 156px;
+  top: -14px;
+  left: -80px;
+}
+.form-box-register .form-box-header {
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #3e3f5e;
+  font-family: "Rajdhani", sans-serif;
+  text-align: center;
+}
+.form-box-register .form-content {
+  margin-top: 76px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 28px;
+  margin-bottom: 40px;
+}
+.form-box-register .form-content .form-under {
+  display: flex;
+  justify-content: space-between;
+}
+.form-box-register .form-content .form-under .form-under-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.form-box-register .form-content .form-under .form-under-item .checkbox-title-register {
+  display: flex;
+  align-items: center;
+}
+.form-box-register .form-content .form-under .form-under-item .checkbox-title-register label {
+  display: block;
+  padding-left: 15px;
+  color: #3e3f5e;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  font-family: Rajdhani, sans-serif;
+}
+.form-box-register .form-content .form-under .form-under-item .checkbox-title-register .box-check-register {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #dedeea;
+  border-radius: 7px;
+  background-color: #fff;
+  position: relative;
+}
+.form-box-register .form-content .form-under .form-under-item .checkbox-title-register .box-check-register .checkbox-icon i {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 22px;
+  color: white;
+  background-color: #23d2e2;
+  transition: 0.2s linear;
+}
+.form-box-register .form-content .form-under .form-under-item .btn {
+  display: inline-block;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  height: 54px;
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: #23d2e2;
+  box-shadow: 4px 7px 12px 0 rgba(97, 93, 250, 0.2);
+}
+.form-box-register .form-content input[id=checkbox-register]:checked ~ .checkbox-title-register .box-check-register .checkbox-icon i {
+  display: block;
+  transition: 0.2s linear;
+}
+.form-box-register .contact-txt {
+  display: block;
+  color: #3e3f5e;
+  font-family: Rajdhani, sans-serif;
+  font-size: 14px;
+}
+.form-box-register .contact-txt a {
+  text-decoration: none;
+  color: #23d2e2;
+}
+
+.container .landing {
+  width: 100%;
+  height: 100%;
+  background: url(../img/landing-background.jpg) no-repeat 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-size: cover;
+}
+.container .landing .landing-bg-right {
+  background: url(../img/dot-texture.png) repeat 0 0 white;
+  width: 64%;
+  height: 140%;
+  border-radius: 50%;
+  position: absolute;
+  top: -20%;
+  right: -32%;
+  pointer-events: none;
+}
+.container .landing .landing-info {
+  position: absolute;
+  top: 16%;
+  left: 13%;
+  width: 584px;
+}
+.container .landing .landing-info .landing-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .landing .landing-info .landing-logo .viking-logo-link {
+  text-decoration: none;
+  width: 42px;
+  height: 60px;
+}
+.container .landing .landing-info .landing-logo .viking-logo-link .logo {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+.container .landing .landing-info .landing-title-top {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1rem;
+  text-align: center;
+  margin-top: 36px;
+  color: white;
+  font-family: "Rajdhani", sans-serif;
+  text-transform: uppercase;
+}
+.container .landing .landing-info .landing-title-bottom {
+  color: white;
+  text-align: center;
+  font-family: "Titillium Web", sans-serif;
+  text-transform: uppercase;
+  font-size: 6.5rem;
+  font-weight: 900;
+  display: block;
+  margin-top: -30px;
+}
+.container .landing .landing-info .landing-info-txt {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 24px;
+  color: white;
+  font-family: "Rajdhani", sans-serif;
+  text-align: center;
+  width: 384px;
+  margin: 13px auto 0;
+}
+.container .landing .landing-info .switch-btn {
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+}
+.container .landing .landing-info .switch-btn .toggle-btn {
+  display: block;
+  width: 180px;
+  height: 55px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 54px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s linear;
+  background: none;
+  border: 1px solid white;
+}
+.container .landing .landing-info .switch-btn .toggle-login {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+.container .landing .landing-info .switch-btn .toggle-register {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.container .landing .landing-form {
+  position: absolute;
+  top: 0;
+  right: 13%;
+  width: 484px;
+  height: 100%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input[id=login]:checked ~ .landing-info .switch-btn .toggle-login {
+  background-color: white;
+  color: #3e3f5e;
+}
+
+input[id=register]:checked ~ .landing-info .switch-btn .toggle-register {
+  background-color: white;
+  color: #3e3f5e;
+}
+
+input[id=login]:checked ~ .landing-form .form-box {
+  transform: translate(0%, 0px);
+  visibility: visible;
+  opacity: 1;
+}
+
+input[id=login]:checked ~ .landing-form .form-box-register {
+  transform: translate(50%, 0px);
+  visibility: hidden;
+  opacity: 0;
+}
+
+input[id=register]:checked ~ .landing-form .form-box {
+  transform: translate(50%, 0px);
+  visibility: hidden;
+  opacity: 0;
+}
+
+input[id=register]:checked ~ .landing-form .form-box-register {
+  transform: translate(0%, 0px);
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 1500px) {
+  .landing .landing-info {
+    position: absolute;
+    top: 16%;
+    left: 6%;
+    width: 584px;
+  }
+  .landing .landing-form {
+    right: 80px;
+  }
+  .landing-bg-right {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bài Tập 11</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -21,7 +24,7 @@
     <header>
       <nav class="nav-menu">
         <div class="container">
-          <input type="checkbox" id="navbar-toggle" hidden>
+          <input type="checkbox" id="navbar-toggle" hidden />
           <div class="logo-brand">
             <a href="#"
               ><img
@@ -30,8 +33,19 @@
                 class="logo-link"
             /></a>
           </div>
-          <label for="navbar-toggle"><i class="fa-solid fa-bars"></i></label>
-          <div class="navbar-collapse" id="navbar-content">
+          <!-- <label for="navbar-toggle"><i class="fa-solid fa-bars"></i></label> -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav" style="list-style: none">
               <li class="navbar-item">
                 <a href="#" class="nav-link checker">Home</a>
@@ -287,7 +301,9 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-xxl-8 col-xl-10 col-lg-10 col-md-8 col-sm-10 col-12">
+                <div
+                  class="col-xxl-8 col-xl-10 col-lg-10 col-md-8 col-sm-10 col-12"
+                >
                   <div class="app-content-btn">
                     <a href="#" class="app-btn">
                       <span>

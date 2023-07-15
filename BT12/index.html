@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="landing">
+        <div class="landing-bg-right"></div>
+        <input type="radio" name="login-register" id="login" hidden checked />
+        <input type="radio" name="login-register" id="register" hidden />
+        <div class="landing-info">
+          <div class="landing-logo">
+            <a href="#" class="viking-logo-link">
+              <img src="./img/vikinger-logo.png" alt="logo" class="logo" />
+            </a>
+          </div>
+          <h2 class="landing-title-top">welcome to</h2>
+          <h1 class="landing-title-bottom">vikinger</h1>
+          <p class="landing-info-txt">
+            The next generation social network & community! Connect with your
+            friends and play with our quests and badges gamification system!
+          </p>
+          <div class="switch-btn">
+            <label for="login" class="toggle-btn toggle-login"> Log In </label>
+            <label for="register" class="toggle-btn toggle-register">
+              Register
+            </label>
+          </div>
+        </div>
+        <div class="landing-form">
+          <div class="form-box" id="login">
+            <img
+              class="landing-roket"
+              src="https://odindesignthemes.com/vikinger/img/landing/rocket.png"
+              alt=""
+            />
+            <h2 class="form-box-header">Account Login</h2>
+            <form class="form-content">
+              <div class="input-group">
+                <input
+                  type="text"
+                  name="text"
+                  autocomplete="off"
+                  class="input"
+                  required=""
+                />
+                <label class="user-label">Username or Email</label>
+              </div>
+              <div class="input-group">
+                <input
+                  type="password"
+                  name="text"
+                  autocomplete="off"
+                  class="input"
+                  required=""
+                />
+                <label class="user-label">Password</label>
+              </div>
+              <div class="form-under">
+                <div class="form-under-item">
+                  <input type="checkbox" name="checkbox" id="checkbox" hidden />
+                  <div class="checkbox-title">
+                    <div class="box-check">
+                      <span class="checkbox-icon">
+                        <i class="fa-solid fa-xmark"></i>
+                      </span>
+                    </div>
+                    <label for="checkbox">Remember Me</label>
+                  </div>
+                  <a href="#" class="form-link">Forgot Password?</a>
+                </div>
+              </div>
+              <div class="form-under">
+                <div class="form-under-item">
+                  <button class="btn" type="submit">
+                    Login to your Account
+                  </button>
+                </div>
+              </div>
+            </form>
+            <p class="line-txt">Login with your Social Account</p>
+            <div class="social-link">
+              <a href="#" class="social-link-fb"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="#" class="social-link-twitter"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a href="#" class="social-link-twitch"
+                ><i class="fa-brands fa-twitch"></i
+              ></a>
+              <a href="#" class="social-link-youtube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="form-box-register" id="register">
+            <img
+              class="landing-roket"
+              src="https://odindesignthemes.com/vikinger/img/landing/rocket.png"
+              alt=""
+            />
+            <h2 class="form-box-header">Create your Account!</h2>
+            <form class="form-content">
+              <div class="input-group">
+                <input
+                  type="text"
+                  name="text"
+                  autocomplete="off"
+                  class="input"
+                  required=""
+                />
+                <label class="user-label">Your Email</label>
+              </div>
+              <div class="input-group">
+                <input
+                  type="text"
+                  name="text"
+                  autocomplete="off"
+                  class="input"
+                  required=""
+                />
+                <label class="user-label">Username</label>
+              </div>
+              <div class="input-group">
+                <input
+                  type="password"
+                  name="text"
+                  autocomplete="off"
+                  class="input"
+                  required=""
+                />
+                <label class="user-label">Password</label>
+              </div>
+              <div class="input-group">
+                <input
+                  type="password"
+                  name="text"
+                  autocomplete="off"
+                  class="input"
+                  required=""
+                />
+                <label class="user-label">Repeat Password</label>
+              </div>
+              <div class="form-under">
+                <div class="form-under-item">
+                  <input
+                    type="checkbox"
+                    name="checkbox"
+                    id="checkbox-register"
+                    hidden
+                  />
+                  <div class="checkbox-title-register">
+                    <div class="box-check-register">
+                      <span class="checkbox-icon">
+                        <i class="fa-solid fa-xmark"></i>
+                      </span>
+                    </div>
+                    <label for="checkbox-register"
+                      >Send me news and updates via email</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="form-under">
+                <div class="form-under-item">
+                  <button class="btn" type="submit">Register Now!</button>
+                </div>
+              </div>
+            </form>
+            <p class="contact-txt">
+              You'll receive a confirmation email in your inbox with a link to
+              activate your account. If you have any problems,
+              <a href="#">contact us</a>!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

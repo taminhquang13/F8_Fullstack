@@ -190,3 +190,18 @@
     }
   }
 
+.box-check {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #dedeea;
+  border-radius: 6px;
+  background-color: #fff;
+  pointer-events: none;
+  transition: border-color .2s ease-in-out,background-color .2s ease-in-out;
+}
+
+

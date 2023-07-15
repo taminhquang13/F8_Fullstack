@@ -50,17 +50,8 @@ header {
     margin: 0 auto;
     width: 100%;
 }
-label {
-    display: none;
-}
 
-label i {
-    display: inline-block;
-    font-size: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.267);
-    padding: 5px 20px;
-    color: rgba(0, 0, 0, 0.726);
-}
+
 .navbar-collapse {
     display: flex;
     align-items: center;
@@ -816,22 +807,17 @@ label i {
     .container {
         max-width: 720px;
     }
-    label {
-        display: block;
-    }
-    .navbar-collapse {
+    /* .navbar-collapse {
         display: none;
+        transition: 0.4s linear;
     }
-    input[id="navbar-toggle"]:checked ~ .navbar-collapse, 
-    input[id="navbar-toggle"]:checked ~ .navbar-collapse .navbar-nav,
-    input[id="navbar-toggle"]:checked ~ .navbar-collapse .navbar-search .search form{
+    .navbar-collapse .navbar-nav {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: space-between;
         margin: 0;
-        transition: 0.4s linear;
-    }
+        position: relative;
+    } */
 }
 
 @media screen and (max-width: 768px) {
