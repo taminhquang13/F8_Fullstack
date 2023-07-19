@@ -14,3 +14,21 @@
     align-items: center;
     justify-content: center;
 }
+
+@mixin screen ($break-point) {
+    @if $break-point == mobile {
+        @media (max-width: 575px) {
+            @content;
+        }
+    }
+    @if $break-point == tablet {
+        @media (min-width: 576px) and (max-width: 991px) {
+            @content;
+        }
+    }
+    @if $break-point == pc {
+        @media (min-width: 992px) {
+            @content;
+        }
+    } 
+}
