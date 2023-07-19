@@ -37,6 +37,7 @@
    
 .input:focus ~ label, input:valid ~ label {
     transform: translateY(-28px);
+    padding: 0 6px;
     background-color: white;
     color: #adafca;
     font-size: 13px;

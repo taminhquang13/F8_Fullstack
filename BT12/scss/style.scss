@@ -10,9 +10,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-html {
-    overflow: hidden;
-}
+
 input[id=login]:checked ~ .landing-info .switch-btn .toggle-login {
     background-color: white;
     color: #3e3f5e;
@@ -24,34 +22,32 @@ input[id=register]:checked ~ .landing-info .switch-btn .toggle-register {
 
 input[id=login]:checked ~ .landing-form .form-box {
     transform: translate(0%, 0px);
-    visibility: visible;
+    display: block;
     opacity: 1;
 }
 
 input[id=login]:checked ~ .landing-form .form-box-register {
     transform: translate(50%, 0px);
-    visibility: hidden;
+    display: none;
     opacity: 0;
 }
 
 input[id=register]:checked ~ .landing-form .form-box {
     transform: translate(50%, 0px);
-    visibility: hidden;
+    display: none;
     opacity: 0;
 }
 
 input[id=register]:checked ~ .landing-form .form-box-register {
     transform: translate(0%, 0px);
-    visibility: visible;
+   display: block;
     opacity: 1;
-}
-
-@media screen and (mix-width: 1500px) {
-
 }
 
 @media screen and (max-width: 1500px) {
     .container {
+        width: 100%;
+        height: 100%;
         .landing {
             .landing-bg-right {
                 display: none;
@@ -93,10 +89,20 @@ input[id=register]:checked ~ .landing-form .form-box-register {
             .landing-form {
                 width: 100%;
                 position: static;
-                margin: 70px auto 0;
+                margin: 70px 0;
+                display: flex;
+                justify-content: center;
+                overflow: auto;
                 .form-box {
-                    margin: 0 auto;
                     position: static;
+                    margin: 0 auto;
+                    // top: 0;
+                    // left: 50%;
+                    // transform: translateX(-50%);
+                }
+                .form-box-register{
+                    position: static;
+                    margin: 0px auto;
                 }
                 .landing-roket{
                     display: none;

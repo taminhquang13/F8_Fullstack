@@ -7,7 +7,7 @@
     padding: 64px;
     z-index: 1;
     position: absolute;
-    visibility: visible;
+    display: block;
     left: 0;
     box-shadow: 0 0 60px 0 rgba(94,92,154,.12);
     .landing-roket {
@@ -49,6 +49,7 @@
                         font-weight: 700;
                         line-height: 22px;
                         font-family: Rajdhani,sans-serif;
+                        cursor:pointer;
                     }
                     .box-check {
                         width: 22px;
