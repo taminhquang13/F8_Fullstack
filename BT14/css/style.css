@@ -39,22 +39,26 @@ ul, ol {
   padding: 20px 0;
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
 }
-.header .header-menu ul {
+.header .header-menu {
+  margin-right: 1rem;
+}
+.header .header-menu .menu-list {
   display: flex;
   justify-content: flex-end;
 }
-.header .header-menu ul li a {
+.header .header-menu .menu-list label {
   font-weight: 600;
   font-size: 2rem;
   padding: 55px 0;
-  margin: 0 30px;
+  margin: 0 3rem;
   position: relative;
+  cursor: pointer;
 }
-.header .header-menu ul li a.active, .header .header-menu ul li a:hover {
+.header .header-menu .menu-list label.active, .header .header-menu .menu-list label:hover {
   color: #46B20F;
   position: relative;
 }
-.header .header-menu ul li a.active::before, .header .header-menu ul li a:hover::before {
+.header .header-menu .menu-list label.active::before, .header .header-menu .menu-list label:hover::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -63,7 +67,7 @@ ul, ol {
   bottom: 0;
   left: 0;
 }
-.header .header-menu ul li a::before {
+.header .header-menu .menu-list label::before {
   content: "";
   position: absolute;
   width: 0;
@@ -73,7 +77,7 @@ ul, ol {
   left: 0;
   transition: all 0.3s ease-in-out;
 }
-.header .header-menu ul li a:hover::before {
+.header .header-menu .menu-list label:hover::before {
   width: 100%;
 }
 .header .header-icon {
@@ -99,72 +103,75 @@ ul, ol {
   margin: 0;
 }
 
+.about-top {
+  position: relative;
+  overflow: hidden;
+}
+.about-top::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 52.5%;
+  right: 0;
+  width: 47.5%;
+  height: calc(100% - 2rem);
+  background-color: #DCFFCA;
+  border-radius: 2rem 0 0 2rem;
+  z-index: -1;
+}
+
 .content-left {
-  width: 100%;
-  height: 85rem;
   display: flex;
   align-items: center;
+  padding: 26rem 2rem;
 }
-.content-left .content-left-item {
-  color: #2C2C2C;
-  margin-top: 22rem;
-  margin-left: 2rem;
-}
-.content-left .content-left-item .content-left-titletop {
+.content-left .content-left-item .content-left-title-top {
   font-size: 4.4rem;
   font-weight: 800;
+  line-height: 5.8rem;
+  color: #2C2C2C;
 }
 .content-left .content-left-item .content-left-title {
   display: block;
   width: 70%;
   font-size: 5.2rem;
   font-weight: 800;
+  color: #2C2C2C;
 }
 .content-left .content-left-item .content-left-txt {
-  display: block;
   width: 75%;
   font-size: 1.6rem;
   font-weight: 400;
   margin-top: 3.2rem;
+  line-height: 2.45rem;
+  color: #2C2C2C;
 }
 
 .content-right {
-  width: 100%;
-  height: 100%;
-}
-.content-right .chop {
   position: relative;
-  width: 100%;
-  height: 100%;
 }
-.content-right .chop div {
-  background-color: #DCFFCA;
-  display: block;
-  width: calc(50vw - 7.4rem);
-  height: 100%;
-  border-radius: 2rem 0 0 2rem;
-  margin-left: 5.5rem;
+.content-right .content-right-item {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
 }
-.content-right .chop img {
+.content-right .content-right-item img {
+  max-width: none;
   position: absolute;
-  top: 0;
-  left: -15rem;
+  top: -2%;
+  left: -22%;
 }
-.content-right .chop .content-right-title {
+.content-right .content-right-item .content-right-title {
+  line-height: 20rem;
   font-size: 20rem;
   font-weight: 800;
   opacity: 0.150000006;
-  transform: rotate(90deg);
+  transform: rotateZ(90deg) translateY(-97%) translateX(30%);
 }
 
-.main-header-content {
+.achievement-container {
   text-align: center;
-  margin-top: 12rem;
+  margin-top: 10rem;
 }
-.main-header-content .main-header-title {
+.achievement-container .achievement-title {
   width: 40%;
   display: block;
   margin: 0 auto;
@@ -172,7 +179,7 @@ ul, ol {
   font-weight: 800;
   line-height: 5rem;
 }
-.main-header-content .main-header-txt {
+.achievement-container .achievement-txt {
   width: 55%;
   display: block;
   margin: 0 auto;
@@ -183,12 +190,16 @@ ul, ol {
   color: #2C2C2C;
 }
 
-.main-header-achievement {
+.achievement-content {
   position: relative;
   margin-top: 3rem;
   padding: 10.8rem 13.5rem 13.7rem 13.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2.6rem;
 }
-.main-header-achievement::before {
+.achievement-content::before {
   position: absolute;
   content: "";
   width: 28.2rem;
@@ -199,7 +210,7 @@ ul, ol {
   left: 0;
   z-index: -1;
 }
-.main-header-achievement::after {
+.achievement-content::after {
   position: absolute;
   content: "";
   width: 28.2rem;
@@ -210,75 +221,71 @@ ul, ol {
   right: 0;
   z-index: -1;
 }
-.main-header-achievement .achievement-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 2.6rem;
-}
-.main-header-achievement .achievement-pink-content, .main-header-achievement .main-header-achievement.achievement-green-content {
-  padding: 3.3rem 0;
-}
-.achievement-detail-pink {
-  z-index: 1;
-  padding: 4rem;
-  background-color: white;
+
+.achievement-pink-content {
+  border-radius: 4px;
+  background: #FFF;
   box-shadow: -7px 10px 87px 0px rgba(54, 54, 54, 0.12);
-  width: 35.3rem;
-  height: 40.5rem;
+  padding: 4rem;
+  width: 353px;
+  height: 405px;
 }
-.achievement-detail-pink .achievement-logo {
+.achievement-pink-content .achievement-logo {
   width: 10rem;
   height: 10rem;
-  background-color: #FFF0E7;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #FFF0E7;
+  border-radius: 1.2rem;
 }
-.achievement-detail-pink .achievement-title {
+.achievement-pink-content .achievement-item .achievement-content-title, .achievement-pink-content .achievement-item .achievement-content-txt {
+  text-align: start;
   font-size: 5.2rem;
   font-weight: 800;
-  text-align: left;
-  margin-top: 2.8rem;
   color: #2C2C2C;
+  margin-top: 2.8rem;
 }
-.achievement-detail-pink .achievement-txt {
+.achievement-pink-content .achievement-item .achievement-content-txt {
   font-size: 2.4rem;
   font-weight: 400;
   line-height: 3.7rem;
-  text-align: left;
-  margin-top: 2.8rem;
-  color: #2C2C2C;
+  margin-top: 2.9rem;
 }
 
-.achievement-detail-green {
-  z-index: 1;
-  padding: 4rem;
-  background-color: white;
+.achievement-green-content {
+  border-radius: 4px;
+  background: #FFF;
   box-shadow: -7px 10px 87px 0px rgba(54, 54, 54, 0.12);
-  width: 41.1rem;
-  height: 47.1rem;
+  padding: 7.3rem 4rem;
+  width: 411px;
+  height: 471px;
 }
-.achievement-detail-green .achievement-logo {
+.achievement-green-content .achievement-logo {
   width: 10rem;
   height: 10rem;
-  background-color: #FFF0E7;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #F2FFEC;
+  border-radius: 1.2rem;
 }
-.achievement-detail-green .achievement-title {
+.achievement-green-content .achievement-item .achievement-content-title, .achievement-green-content .achievement-item .achievement-content-txt {
+  text-align: start;
   font-size: 5.2rem;
   font-weight: 800;
-  text-align: left;
+  color: #2C2C2C;
   margin-top: 2.8rem;
 }
-.achievement-detail-green .achievement-txt {
+.achievement-green-content .achievement-item .achievement-content-txt {
   font-size: 2.4rem;
   font-weight: 400;
   line-height: 3.7rem;
-  text-align: left;
-  margin-top: 2.8rem;
+  margin-top: 2.9rem;
+}
+
+.products {
+  margin-top: 10rem;
 }
 
 .products-title {
@@ -384,6 +391,11 @@ ul, ol {
   font-size: 2rem;
   font-weight: 700;
   color: white;
+  cursor: pointer;
+}
+
+.post {
+  margin-top: 14rem;
 }
 
 .post-title {
@@ -476,15 +488,26 @@ ul, ol {
 
 .quality {
   margin-top: 10rem;
+  position: relative;
 }
-.quality .quality-title {
+.quality::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 45%;
+  background-color: #FFF0E7;
+  bottom: 0;
+  z-index: -1;
+}
+
+.quality-container .quality-title {
   color: #2C2C2C;
   text-align: center;
   font-size: 3.8rem;
   font-weight: 800;
   line-height: 5rem;
 }
-.quality .quality-txt {
+.quality-container .quality-txt {
   color: #2C2C2C;
   font-size: 1.6rem;
   font-weight: 400;
@@ -502,30 +525,204 @@ ul, ol {
   column-gap: 3rem;
   counter-reset: number;
 }
-.quality-content .bg-color {
-  background-color: #FFF0E7;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  z-index: -1;
-}
 .quality-content .quality-item {
   width: 41.5rem;
+  height: 43.1rem;
   background-color: white;
   border-radius: 1rem;
+  margin-bottom: 12rem;
 }
 .quality-content .quality-item .quality-detail {
   margin-top: 2.9rem;
 }
-.quality-content .quality-item .quality-detail .quality-detail-title {
-  color: #E05000;
-  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.quality-content .quality-item .quality-detail .quality-list {
+  margin-left: 3.3rem;
 }
-.quality-content .quality-item .quality-detail .quality-detail-title::before {
+.quality-content .quality-item .quality-detail .quality-list .quality-detail-title, .quality-content .quality-item .quality-detail .quality-list .quality-detail-title::before {
+  color: #E05000;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+}
+.quality-content .quality-item .quality-detail .quality-list .quality-detail-title::before {
   counter-increment: number;
   content: "0" counter(number) ".";
+}
+.quality-content .quality-item .quality-detail .quality-list .quality-detail-txt {
+  color: #2C2C2C;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.45rem;
+  margin-top: 0.8rem;
+}
+
+.service-container {
+  display: flex;
+  justify-content: center;
+  column-gap: 6.3rem;
+  row-gap: 4.7rem;
+  flex-wrap: wrap;
+  margin-top: 16rem;
+}
+.service-container .service-item {
+  width: 34.6rem;
+  height: 15.7rem;
+  display: flex;
+  column-gap: 1.9rem;
+}
+.service-container .service-item .service-icon img {
+  max-width: none;
+}
+.service-container .service-item .service-info-title {
+  color: #2C2C2C;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+  margin-bottom: 0.8rem;
+}
+.service-container .service-item .service-info-txt {
+  color: #2C2C2C;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.form-title {
+  color: #2C2C2C;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+  margin-top: 22.6rem;
+}
+
+.form-img {
+  margin-top: 16.8rem;
+}
+
+.form-input input, .form-input .message {
+  border-radius: 8px;
+  width: 100%;
+  border: 1px solid #A3A3A3;
+  border-radius: 0.8rem;
+  padding: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  color: #2C2C2C;
+  margin-top: 3.2rem;
+}
+.form-input .form-mid {
+  display: flex;
+  width: 100%;
+  column-gap: 2.1rem;
+  margin-top: 2.8rem;
+}
+.form-input .form-mid input, .form-input .form-mid .message {
+  margin: 0;
+}
+.form-input .message {
+  font-family: "Inter", sans-serif;
+  resize: none;
+}
+
+.form-btn {
+  text-align: end;
+  margin-top: 3.2rem;
+}
+.form-btn .btn-form {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  padding: 1.6rem 6rem;
+  background-color: #46B20F;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: #F2FFEC;
+  padding-top: 8rem;
+  margin-top: 12rem;
+}
+
+.footer-logo-wrap img {
+  display: block;
+  width: auto;
+}
+.footer-logo-wrap .footer-logo-content {
+  width: 50%;
+  margin-left: 4.5rem;
+}
+.footer-logo-wrap .footer-logo-content .footer-logo-txt {
+  color: #2C2C2C;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.45rem;
+}
+
+.footer-content h4 {
+  color: #46B20F;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.6rem;
+}
+.footer-content .footer-list {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+}
+.footer-content .footer-list .footer-list-link {
+  color: #2C2C2C;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.45rem;
+  width: 60%;
+}
+.footer-content .flex-link {
+  display: flex;
+  align-items: center;
+  column-gap: 1.2rem;
+}
+.footer-content .flex-link span {
+  color: #2C2C2C;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+}
+
+.footer-bottom .footer-copyright {
+  margin-left: 3rem;
+}
+.footer-bottom .footer-bottom-line {
+  height: 2px;
+  width: 95%;
+  background-color: #A3A3A3;
+  margin: 0 auto;
+}
+.footer-bottom .social {
+  display: flex;
+  align-items: center;
+  margin-top: 2.9rem;
+}
+.footer-bottom .footer-social {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 3.5rem;
+}
+.footer-bottom .footer-social .social-list {
+  display: flex;
+  column-gap: 0.8rem;
+}
+.footer-bottom .footer-social .social-list .social-item {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #DCFFCA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
