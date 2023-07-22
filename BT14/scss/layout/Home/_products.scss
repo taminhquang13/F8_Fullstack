@@ -25,6 +25,8 @@
 
         .item-img-1 {
             margin-top: 13.8rem;
+            object-fit: cover;
+            width: 100%;
         }
 
         .item-img-2 {
@@ -92,7 +94,7 @@
     .detail-txt {
         font-size: 2rem;
         font-weight: 400;
-        margin: 8;
+        margin: 0.8rem 0;
         line-height: 2.6rem;
         color: #656565;
 
