@@ -2,8 +2,13 @@
     padding: 20px 0;
     box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
 
+    .menu-toggle {
+        display: none;
+    }
+
     .header-menu {
         margin-right: 1rem;
+
         .menu-list {
             display: flex;
             justify-content: flex-end;
@@ -52,6 +57,16 @@
 
             }
         }
+    }
+
+    .overlay {
+        opacity: 0;
+        visibility: hidden;
+        position: fixed;
+        inset: 0;
+        background: #0000006b;
+        transition: 0.4s ease;
+        transition-property: opacity, visibility;
     }
 
     .header-icon {

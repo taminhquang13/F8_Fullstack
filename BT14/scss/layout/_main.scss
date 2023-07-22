@@ -1,77 +1,156 @@
-.about-top {
-    position: relative;
-    overflow: hidden;
+// Home
 
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 52.5%;
-        right: 0;
-        width: 47.5%;
-        height: calc(100% - 2rem);
-        background-color: #DCFFCA;
-        border-radius: 2rem 0 0 2rem;
-        z-index: -1;
+@import './Home/aboutbrand';
+@import './Home/achievement';
+@import './Home/products';
+@import './Home/post';
+@import './Home/quality';
+@import './Home/service';
+@import './Home/form';
+
+// about
+
+
+@media screen and (max-width: 992px) {
+
+    /*Header*/
+    .container {
+        padding: 0 1.5rem;
     }
-}
 
-.content-left {
-    @include flexCenter;
-    padding: 26rem 2rem;
+    .header {
 
-    .content-left-item {
-        .content-left-title-top {
-            font-size: 4.4rem;
-            font-weight: 800;
-            line-height: 5.8rem;
-            color: $textColor;
-        }
-
-        .content-left-title {
+        .menu-toggle {
             display: block;
-            width: 70%;
-            font-size: 5.2rem;
-            font-weight: 800;
-            color: $textColor;
+            font-size: 2.5rem;
+            margin-left: 5rem;
         }
 
-        .content-left-txt {
-            width: 75%;
-            font-size: 1.6rem;
-            font-weight: 400;
-            margin-top: 3.2rem;
-            line-height: 2.45rem;
-            color: $textColor;
+        .header-logo {
+            text-align: center;
+            margin-left: 5rem;
+        }
+
+        .header-menu {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background: black;
+            min-width: calc(100% / 2);
+            translate: -100%;
+            transition: translate 0.4s ease;
+            z-index: 1;
+
+            .menu-list {
+                display: flex;
+                flex-direction: column;
+                padding: 2.5rem 0;
+
+
+                a {
+                    margin: 2.5rem 5rem;
+
+                    label {
+                        padding: 0.5rem 0;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .header-icon {
+            display: flex;
+            justify-content: flex-end;
+            column-gap: 3.5rem;
         }
     }
-}
 
-.content-right {
-    position: relative;
-    .content-right-item {
-        display: flex;
-        
-        img {
-            max-width: none;
+    input[type="checkbox"]:checked~.header-menu {
+        translate: 0;
+    }
+
+    input[type="checkbox"]:checked~.overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /*About brand*/
+    .about-top {
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+            content: '';
             position: absolute;
-            top: -2%;
-            left: -22%;
+            top: 50%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #DCFFCA;
+            border-radius: 2rem 0 0 2rem;
+            z-index: -1;
         }
-        .content-right-title {
-            line-height: 20rem;
-            font-size: 20rem;
-            font-weight: 800;
-            opacity: 0.15000000596046448;
-            transform: rotateZ(90deg) translateY(-97%) translateX(30%);
-            
+
+        .content-left {
+            padding: 10rem;
+
+            .content-left-item {
+                text-align: center;
+
+                .content-left-title-top {
+                    font-size: 4.4rem;
+                    font-weight: 800;
+                    line-height: 5.8rem;
+                    color: $textColor;
+                }
+
+                .content-left-title {
+                    margin: 0 auto;
+                    display: block;
+                    font-size: 5.2rem;
+                    font-weight: 800;
+                    color: $textColor;
+                }
+
+                .content-left-txt {
+                    margin: 0 auto;
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                    margin-top: 3.2rem;
+                    line-height: 2.45rem;
+                    color: $textColor;
+                }
+            }
+        }
+
+        .content-right {
+            position: static;
+
+            .content-right-item {
+                display: block;
+                text-align: center;
+                img {
+                    display: block;
+                    position: static;
+                    width: 35%;
+                    height: 35%;
+                    object-fit: cover;   
+                    margin: 0 auto;         
+                }
+
+                .content-right-title {
+                    line-height: 10rem;
+                    font-size: 10rem;
+                    font-weight: 800;
+                    opacity: 0.15000000596046448;
+                    transform: rotateZ(0deg);
+
+                }
+            }
         }
     }
-}
 
-@import './achievement';
-@import './products';
-@import './post';
-@import './quality';
-@import './service';
-@import './form';
+}

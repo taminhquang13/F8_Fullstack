@@ -39,6 +39,9 @@ ul, ol {
   padding: 20px 0;
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
 }
+.header .menu-toggle {
+  display: none;
+}
 .header .header-menu {
   margin-right: 1rem;
 }
@@ -79,6 +82,15 @@ ul, ol {
 }
 .header .header-menu .menu-list label:hover::before {
   width: 100%;
+}
+.header .overlay {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4196078431);
+  transition: 0.4s ease;
+  transition-property: opacity, visibility;
 }
 .header .header-icon {
   display: flex;
@@ -123,7 +135,7 @@ ul, ol {
 .content-left {
   display: flex;
   align-items: center;
-  padding: 26rem 2rem;
+  padding: 21rem 2rem;
 }
 .content-left .content-left-item .content-left-title-top {
   font-size: 4.4rem;
@@ -154,17 +166,16 @@ ul, ol {
   display: flex;
 }
 .content-right .content-right-item img {
-  max-width: none;
   position: absolute;
-  top: -2%;
+  top: 0;
   left: -22%;
 }
 .content-right .content-right-item .content-right-title {
-  line-height: 20rem;
-  font-size: 20rem;
+  line-height: 17.5rem;
+  font-size: 17.5rem;
   font-weight: 800;
   opacity: 0.150000006;
-  transform: rotateZ(90deg) translateY(-97%) translateX(30%);
+  transform: rotateZ(90deg) translateY(-67%) translateX(33%);
 }
 
 .achievement-container {
@@ -639,6 +650,123 @@ ul, ol {
   cursor: pointer;
 }
 
+@media screen and (max-width: 992px) {
+  /*Header*/
+  .container {
+    padding: 0 1.5rem;
+  }
+  .header .menu-toggle {
+    display: block;
+    font-size: 2.5rem;
+    margin-left: 5rem;
+  }
+  .header .header-logo {
+    text-align: center;
+    margin-left: 5rem;
+  }
+  .header .header-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: black;
+    min-width: 50%;
+    translate: -100%;
+    transition: translate 0.4s ease;
+    z-index: 1;
+  }
+  .header .header-menu .menu-list {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 0;
+  }
+  .header .header-menu .menu-list a {
+    margin: 2.5rem 5rem;
+  }
+  .header .header-menu .menu-list a label {
+    padding: 0.5rem 0;
+    color: white;
+  }
+  .header .header-icon {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 3.5rem;
+  }
+  input[type=checkbox]:checked ~ .header-menu, .form-input [type=checkbox].message:checked ~ .header-menu {
+    translate: 0;
+  }
+  input[type=checkbox]:checked ~ .overlay, .form-input [type=checkbox].message:checked ~ .overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+  /*About brand*/
+  .about-top {
+    position: relative;
+    overflow: hidden;
+  }
+  .about-top::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #DCFFCA;
+    border-radius: 2rem 0 0 2rem;
+    z-index: -1;
+  }
+  .about-top .content-left {
+    padding: 10rem;
+  }
+  .about-top .content-left .content-left-item {
+    text-align: center;
+  }
+  .about-top .content-left .content-left-item .content-left-title-top {
+    font-size: 4.4rem;
+    font-weight: 800;
+    line-height: 5.8rem;
+    color: #2C2C2C;
+  }
+  .about-top .content-left .content-left-item .content-left-title {
+    margin: 0 auto;
+    display: block;
+    font-size: 5.2rem;
+    font-weight: 800;
+    color: #2C2C2C;
+  }
+  .about-top .content-left .content-left-item .content-left-txt {
+    margin: 0 auto;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-top: 3.2rem;
+    line-height: 2.45rem;
+    color: #2C2C2C;
+  }
+  .about-top .content-right {
+    position: static;
+  }
+  .about-top .content-right .content-right-item {
+    display: block;
+    text-align: center;
+  }
+  .about-top .content-right .content-right-item img {
+    display: block;
+    position: static;
+    width: 35%;
+    height: 35%;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+  .about-top .content-right .content-right-item .content-right-title {
+    line-height: 10rem;
+    font-size: 10rem;
+    font-weight: 800;
+    opacity: 0.150000006;
+    transform: rotateZ(0deg);
+  }
+}
 .footer {
   background-color: #F2FFEC;
   padding-top: 8rem;
