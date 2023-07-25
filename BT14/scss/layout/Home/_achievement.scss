@@ -59,11 +59,10 @@
     border-radius: 4px;
     background: #FFF;
     box-shadow: -7px 10px 87px 0px rgba(54, 54, 54, 0.12);
-    padding: 4rem;
-    width: 353px;
-    height: 405px;
 
     .achievement-logo {
+        margin-top: 40px;
+        margin-left: 40px;
         width: 10rem;
         height: 10rem;
         @include flexCenterAll;
@@ -72,6 +71,10 @@
     }
 
     .achievement-item {
+        margin-left: 40px;
+        margin-right: 46px;
+        margin-bottom: 70px;
+
         .achievement-content-title {
             text-align: start;
             font-size: 5.2rem;
@@ -89,20 +92,16 @@
 
         }
     }
-
-
-
 }
 
 .achievement-green-content {
     border-radius: 4px;
     background: #FFF;
     box-shadow: -7px 10px 87px 0px rgba(54, 54, 54, 0.12);
-    padding: 7.3rem 4rem;
-    width: 411px;
-    height: 471px;
 
     .achievement-logo {
+        margin-top: 73px;
+        margin-left: 40px;
         width: 10rem;
         height: 10rem;
         @include flexCenterAll;
@@ -111,6 +110,10 @@
     }
 
     .achievement-item {
+        margin-left: 40px;
+        margin-right: 45px;
+        margin-bottom: 70px;
+
         .achievement-content-title {
             text-align: start;
             font-size: 5.2rem;
@@ -126,6 +129,162 @@
             line-height: 3.7rem;
             margin-top: 2.9rem;
 
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .achievement-container {
+        text-align: center;
+        margin-top: 10rem;
+
+        .achievement-title {
+            width: 80%;
+        }
+
+        .achievement-txt {
+            width: 70%;
+
+        }
+    }
+
+    .achievement-pink-content {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+
+        .achievement-logo {
+            margin: 25px 0 0 0;
+        }
+
+        .achievement-item {
+            margin: 0 25px 25px 25px;
+
+            .achievement-content-title {
+
+                text-align: center;
+            }
+
+            .achievement-content-txt {
+                text-align: center;
+
+            }
+        }
+
+    }
+
+    .achievement-green-content {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+
+        .achievement-logo {
+            margin: 40px 0 0 0;
+        }
+
+        .achievement-item {
+            margin: 0 30px 40px 30px;
+
+            .achievement-content-title {
+                text-align: center;
+            }
+
+            .achievement-content-txt {
+                text-align: center;
+
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .achievement-container {
+        text-align: center;
+        margin-top: 10rem;
+        @include flexCenterAll;
+        flex-direction: column;
+
+        .achievement-title {
+            width: 75%;
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 5rem;
+        }
+
+        .achievement-txt {
+            width: 80%;
+            display: block;
+            margin: 0 auto;
+            margin-top: 3rem;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 2.45rem;
+            color: $textColor;
+        }
+    }
+
+    .achievement-content {
+        position: relative;
+        margin-top: 3rem;
+        padding: 0;
+        @include flexCenterAll;
+        column-gap: 0;
+        flex-wrap: wrap;
+
+        &::before {
+            display: none;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .achievement-pink-content {
+        border-radius: 4px;
+        background: #FFF;
+        box-shadow: -7px 10px 87px 0px rgba(54, 54, 54, 0.12);
+        flex-direction: column;
+
+        .achievement-logo {
+            margin: 70px 0 0 0;
+            width: 10rem;
+            height: 10rem;
+            @include flexCenterAll;
+            background-color: #FFF0E7;
+            border-radius: 1.2rem
+        }
+
+        .achievement-item {
+            margin: 0;
+            margin-bottom: 70px;
+            @include flexCenterAll;
+            flex-direction: column;
+        }
+    }
+
+    .achievement-green-content {
+        border-radius: 4px;
+        background: #FFF;
+        box-shadow: -7px 10px 87px 0px rgba(54, 54, 54, 0.12);
+        flex-direction: column;
+
+        .achievement-logo {
+            margin: 70px 0 0 0;
+            width: 10rem;
+            height: 10rem;
+            @include flexCenterAll;
+            background-color: #FFF0E7;
+            border-radius: 1.2rem
+        }
+
+        .achievement-item {
+            margin: 0;
+            margin-bottom: 70px;
+            @include flexCenterAll;
+            flex-direction: column;
         }
     }
 }

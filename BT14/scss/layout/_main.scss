@@ -2,7 +2,7 @@
 .main {
     padding-top: 13.5rem;
 }
-
+// about
 @import './Home/aboutbrand';
 @import './Home/achievement';
 @import './Home/products';
@@ -12,9 +12,44 @@
 @import './Home/form';
 
 // about
+@import './About/aboutgreenchop';
+@import './About/main-products';
+@import './About/mission';
+
+// products
+
+@import './Products/products-detail';
+@import './Products/howtouse';
+@import './Products/protect';
+
+
+.products-tab {
+    display: none;
+}
+
+.about-brand {
+    display: none;
+}
+
+.home {
+    display: none;
+}
+input[id="slide"]:checked ~ .home {
+    display: block;
+}
+
+input[id="slide1"]:checked ~ .about-brand {
+    display: block;
+}
+
+input[id="slide2"]:checked ~ .products-tab {
+    display: block;
+}
+
+// about
 @media only screen and (max-width: 1200px) {}
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 991.98px) {
 
     /*Header*/
     .container {
@@ -34,8 +69,8 @@
         }
 
         .header-logo {
-            text-align: center;
-            margin-left: 5rem;
+           text-align: center;
+            margin-left: 10rem;
         }
 
         .header-menu {
@@ -167,14 +202,12 @@
             padding: 10rem 2rem;
             display: flex;
             justify-content: center;
-            flex-wrap: nowrap;
-            align-items: baseline;
-            column-gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            column-gap: 0;
 
             .achievement-pink-content {
-                width: 30%;
-                height: 100%;
-                margin: 0 2rem;
+                
 
                 .achievement-item {
 
@@ -197,9 +230,7 @@
             }
 
             .achievement-green-content {
-                width: 30%;
-                height: 100%;
-
+             
                 .achievement-item {
                     .achievement-content-title {
                         font-size: 4rem;
@@ -313,7 +344,7 @@
     }
 
     .btn-products-detail {
-        display: block;
+        display: flex;
         margin-top: 3.2rem;
         padding: 1.6rem 1.4rem;
         background-color: $primaryColor;
@@ -331,6 +362,7 @@
         flex-wrap: nowrap;
         padding: 2rem;
     }
+
     .post-btn {
         .btn-post-detail {
             margin-top: 5rem;
@@ -341,7 +373,7 @@
     .quality {
         margin-top: 10rem;
         position: relative;
-        
+
         &::after {
             content: '';
             position: absolute;
@@ -360,7 +392,51 @@
     /*service*/
 
     /*form*/
+    .form-img {
+        display: none;
+    }
 
-    
+    .form {
+        padding: 0 2rem;
+
+        .form-title {
+            text-align: center;
+            font-size: 2.2rem;
+        }
+    }
+
+    .form-input {
+        input {
+            font-size: 1.6rem;
+            padding: 1.4rem;
+        }
+    }
+
+    .form-btn {
+        margin-top: 3rem;
+
+        .btn-form {
+            font-size: 1.8rem;
+        }
+    }
+
+    /*footer*/
+    .footer {
+        padding: 2rem 2rem;
+
+        .footer-logo-wrap {
+            display: none;
+        }
+
+        .footer-content {
+            text-align: center;
+
+            .flex-link {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
 
 }

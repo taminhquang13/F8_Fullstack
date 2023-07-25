@@ -45,6 +45,7 @@
     display: flex;
     column-gap: 2.8rem;
     margin-top: 6rem;
+    flex-wrap: nowrap;
 
     .post-item {
         display: flex;

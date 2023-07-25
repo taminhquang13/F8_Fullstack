@@ -248,11 +248,10 @@ ul, ol {
   border-radius: 4px;
   background: #FFF;
   box-shadow: -7px 10px 87px 0px rgba(54, 54, 54, 0.12);
-  padding: 4rem;
-  width: 353px;
-  height: 405px;
 }
 .achievement-pink-content .achievement-logo {
+  margin-top: 40px;
+  margin-left: 40px;
   width: 10rem;
   height: 10rem;
   display: flex;
@@ -260,6 +259,11 @@ ul, ol {
   align-items: center;
   background-color: #FFF0E7;
   border-radius: 1.2rem;
+}
+.achievement-pink-content .achievement-item {
+  margin-left: 40px;
+  margin-right: 46px;
+  margin-bottom: 70px;
 }
 .achievement-pink-content .achievement-item .achievement-content-title, .achievement-pink-content .achievement-item .achievement-content-txt {
   text-align: start;
@@ -279,11 +283,10 @@ ul, ol {
   border-radius: 4px;
   background: #FFF;
   box-shadow: -7px 10px 87px 0px rgba(54, 54, 54, 0.12);
-  padding: 7.3rem 4rem;
-  width: 411px;
-  height: 471px;
 }
 .achievement-green-content .achievement-logo {
+  margin-top: 73px;
+  margin-left: 40px;
   width: 10rem;
   height: 10rem;
   display: flex;
@@ -291,6 +294,11 @@ ul, ol {
   align-items: center;
   background-color: #F2FFEC;
   border-radius: 1.2rem;
+}
+.achievement-green-content .achievement-item {
+  margin-left: 40px;
+  margin-right: 45px;
+  margin-bottom: 70px;
 }
 .achievement-green-content .achievement-item .achievement-content-title, .achievement-green-content .achievement-item .achievement-content-txt {
   text-align: start;
@@ -306,6 +314,144 @@ ul, ol {
   margin-top: 2.9rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .achievement-container {
+    text-align: center;
+    margin-top: 10rem;
+  }
+  .achievement-container .achievement-title {
+    width: 80%;
+  }
+  .achievement-container .achievement-txt {
+    width: 70%;
+  }
+  .achievement-pink-content {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .achievement-pink-content .achievement-logo {
+    margin: 25px 0 0 0;
+  }
+  .achievement-pink-content .achievement-item {
+    margin: 0 25px 25px 25px;
+  }
+  .achievement-pink-content .achievement-item .achievement-content-title, .achievement-pink-content .achievement-item .achievement-content-txt {
+    text-align: center;
+  }
+  .achievement-pink-content .achievement-item .achievement-content-txt {
+    text-align: center;
+  }
+  .achievement-green-content {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .achievement-green-content .achievement-logo {
+    margin: 40px 0 0 0;
+  }
+  .achievement-green-content .achievement-item {
+    margin: 0 30px 40px 30px;
+  }
+  .achievement-green-content .achievement-item .achievement-content-title, .achievement-green-content .achievement-item .achievement-content-txt {
+    text-align: center;
+  }
+  .achievement-green-content .achievement-item .achievement-content-txt {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .achievement-container {
+    text-align: center;
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .achievement-container .achievement-title {
+    width: 75%;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 5rem;
+  }
+  .achievement-container .achievement-txt {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 3rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.45rem;
+    color: #2C2C2C;
+  }
+  .achievement-content {
+    position: relative;
+    margin-top: 3rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0;
+    flex-wrap: wrap;
+  }
+  .achievement-content::before {
+    display: none;
+  }
+  .achievement-content::after {
+    display: none;
+  }
+  .achievement-pink-content {
+    border-radius: 4px;
+    background: #FFF;
+    box-shadow: -7px 10px 87px 0px rgba(54, 54, 54, 0.12);
+    flex-direction: column;
+  }
+  .achievement-pink-content .achievement-logo {
+    margin: 70px 0 0 0;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF0E7;
+    border-radius: 1.2rem;
+  }
+  .achievement-pink-content .achievement-item {
+    margin: 0;
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .achievement-green-content {
+    border-radius: 4px;
+    background: #FFF;
+    box-shadow: -7px 10px 87px 0px rgba(54, 54, 54, 0.12);
+    flex-direction: column;
+  }
+  .achievement-green-content .achievement-logo {
+    margin: 70px 0 0 0;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF0E7;
+    border-radius: 1.2rem;
+  }
+  .achievement-green-content .achievement-item {
+    margin: 0;
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
 .products {
   margin-top: 10rem;
 }
@@ -466,6 +612,7 @@ ul, ol {
   display: flex;
   column-gap: 2.8rem;
   margin-top: 6rem;
+  flex-wrap: nowrap;
 }
 .post-content .post-item {
   display: flex;
@@ -663,7 +810,451 @@ ul, ol {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 991px) {
+.bg-about-brand {
+  position: relative;
+  overflow: hidden;
+}
+.bg-about-brand::after {
+  content: "";
+  background: #F2FFEC;
+  height: 20rem;
+  width: 100vw;
+  left: 0;
+  top: 0%;
+  position: absolute;
+  z-index: -1;
+}
+.bg-about-brand .bg-about-brand-title {
+  color: #2C2C2C;
+  font-size: 5.2rem;
+  font-weight: 700;
+  padding: 6.9rem 3.5rem;
+}
+.bg-about-brand .achievement-container {
+  margin-top: 12rem;
+}
+
+.about-greenchop {
+  margin-top: 12rem;
+}
+.about-greenchop .greenchop-container {
+  padding: 0 13.5rem;
+}
+.about-greenchop .greenchop-container .greenchop-title {
+  margin: 0 auto;
+  color: #2C2C2C;
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.about-greenchop .greenchop-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6rem;
+}
+.about-greenchop .greenchop-content .greenchop-content-detail {
+  margin: 0;
+}
+.about-greenchop .greenchop-content .greenchop-detail-left, .about-greenchop .greenchop-content .greenchop-detail-right {
+  color: #2C2C2C;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.45rem;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.about-greenchop .greenchop-content .greenchop-detail-left p, .about-greenchop .greenchop-content .greenchop-detail-right p {
+  display: block;
+  width: 77%;
+}
+.about-greenchop .greenchop-content .greenchop-detail-left img, .about-greenchop .greenchop-content .greenchop-detail-right img {
+  display: block;
+}
+@media only screen and (max-width: 991.98px) {
+  .about-greenchop .greenchop-content .greenchop-content-detail {
+    margin: 0;
+  }
+  .about-greenchop .greenchop-content .greenchop-detail-left, .about-greenchop .greenchop-content .greenchop-detail-right {
+    text-align: center;
+    justify-content: center;
+  }
+  .about-greenchop .greenchop-content .greenchop-detail-left p, .about-greenchop .greenchop-content .greenchop-detail-right p {
+    width: 100%;
+  }
+  .about-greenchop .greenchop-content .greenchop-detail-right {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about-greenchop {
+    margin-top: 12rem;
+  }
+  .about-greenchop .greenchop-container {
+    padding: 0 13.5rem;
+  }
+  .about-greenchop .greenchop-container .greenchop-title {
+    margin: 0 auto;
+    color: #2C2C2C;
+    font-size: 3.8rem;
+    font-weight: 800;
+    line-height: 5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .about-greenchop .greenchop-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6rem;
+  }
+  .about-greenchop .greenchop-content .greenchop-content-detail {
+    margin: 40px 0;
+  }
+}
+.main-products {
+  background-color: pink;
+  margin-top: 12rem;
+}
+.main-products .main-products-content {
+  padding: 8rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 6rem;
+}
+.main-products .main-products-content h2 {
+  color: #2C2C2C;
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 5rem;
+}
+.main-products .main-products-content p {
+  text-align: center;
+  width: 67%;
+  color: #2C2C2C;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+  position: relative;
+}
+.main-products .main-products-content p::before {
+  content: "\f10d";
+  position: absolute;
+  top: -3rem;
+  left: -10rem;
+  font-family: "FontAwesome";
+  font-size: 10rem;
+  color: white;
+}
+.main-products .main-products-content p::after {
+  position: absolute;
+  content: "\f10e";
+  font-family: "FontAwesome";
+  bottom: -3rem;
+  right: -10rem;
+  font-size: 10rem;
+  color: white;
+}
+
+.mission {
+  margin-top: 12rem;
+}
+.mission .mission-detail {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 3.2rem;
+  padding-left: 7rem;
+}
+.mission .mission-detail h2 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: #2C2C2C;
+  line-height: 5rem;
+}
+.mission .mission-detail p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.45rem;
+  color: #2C2C2C;
+  width: 69%;
+}
+
+@media only screen and (max-width: 991.98px) {
+  .mission {
+    margin-top: 12rem;
+  }
+  .mission .mission-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mission .mission-detail {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 3.2rem;
+    padding: 0 13.5rem;
+    text-align: center;
+  }
+  .mission .mission-detail p {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.45rem;
+    color: #2C2C2C;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .mission {
+    margin-top: 12rem;
+  }
+  .mission .mission-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+  .mission .mission-detail {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 3.2rem;
+    padding: 0 13.5rem;
+    text-align: center;
+  }
+  .mission .mission-detail p {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.45rem;
+    color: #2C2C2C;
+    width: 100%;
+  }
+}
+.products-tab {
+  position: relative;
+  overflow: hidden;
+}
+.products-tab::after {
+  content: "";
+  background: #F2FFEC;
+  height: 20rem;
+  width: 100vw;
+  left: 0;
+  top: 0%;
+  position: absolute;
+  z-index: -1;
+}
+.products-tab .bg-products {
+  margin: 0;
+}
+.products-tab .bg-products-title {
+  color: #2C2C2C;
+  font-size: 5.2rem;
+  font-weight: 700;
+  padding: 6.9rem 3.5rem;
+}
+.products-tab .products-container {
+  margin-top: 12rem;
+}
+
+.products-detail {
+  margin-top: 16rem;
+}
+.products-detail .products-detail-title_txt {
+  padding: 7rem 13rem;
+  position: relative;
+}
+.products-detail .products-detail-title_txt img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.products-detail .products-detail-title_txt h2 {
+  font-size: 3.3rem;
+  font-weight: 800;
+  line-height: 5rem;
+  margin-bottom: 2rem;
+}
+.products-detail .products-detail-title_txt p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.45rem;
+  width: 80%;
+}
+.products-detail .products-detail-img {
+  object-fit: cover;
+}
+
+.how-to-use .header-title {
+  text-align: center;
+}
+.how-to-use .header-title h2 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 5rem;
+  margin-bottom: 3rem;
+}
+.how-to-use .header-title p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.45rem;
+}
+.how-to-use .how-to-use-item {
+  margin-top: 6rem;
+  counter-reset: numbers;
+}
+.how-to-use .how-to-use-item .list-detail .list-item {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.45rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding-top: 3.8rem;
+}
+.how-to-use .how-to-use-item .list-detail .list-item::before {
+  counter-increment: numbers;
+  content: "0" counter(numbers);
+  font-size: 10rem;
+  font-weight: 800;
+  margin-top: 1.8rem;
+  margin-right: 1.2rem;
+}
+.how-to-use .how-to-use-item .list-detail .list-item::after {
+  content: "";
+  position: absolute;
+  width: 14.8rem;
+  height: 14.8rem;
+  border-radius: 99px;
+  background-color: #FFF0E7;
+  left: 8rem;
+  top: 0;
+  z-index: -1;
+}
+.how-to-use .how-to-use-item .list-detail .list-item p {
+  width: 50%;
+}
+.how-to-use .how-to-use-content {
+  margin-top: 12.4rem;
+  flex-wrap: nowrap;
+}
+.how-to-use .how-to-use-content .how-to-use-content-txt {
+  margin-left: 13rem;
+  position: relative;
+  padding: 10.9rem 0 6.2rem 7.5rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.45rem;
+  margin-right: 5.4rem;
+  background-color: white;
+  box-shadow: 31px 28px 124px rgba(0, 0, 0, 0.06);
+}
+.how-to-use .how-to-use-content .how-to-use-content-txt::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 0px 10px 10px 0px;
+  background: #46B20F;
+}
+.how-to-use .how-to-use-content .how-to-use-content-txt p {
+  width: 73%;
+}
+.how-to-use .how-to-use-content .how-to-use-content-img img {
+  width: 100vw;
+}
+
+.protect {
+  position: relative;
+  margin-bottom: -10rem;
+}
+.protect .bg-protect {
+  position: relative;
+}
+.protect .bg-protect::before {
+  content: "";
+  height: 43rem;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: #F2FFEC;
+  margin-top: 120px;
+  z-index: -1;
+}
+.protect .bg-protect::after {
+  content: "";
+  height: 43rem;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  right: 0;
+  background-color: #FFF0E7;
+  margin-top: 810px;
+  z-index: -1;
+}
+.protect .protect-header {
+  text-align: center;
+}
+.protect .protect-item {
+  padding: 8rem 0 0 13.7rem;
+  margin-top: 6rem;
+}
+.protect .protect-item .protect-left, .protect .protect-item .protect-right {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.45rem;
+  margin-bottom: 6rem;
+}
+.protect .protect-item .protect-left p, .protect .protect-item .protect-right p {
+  width: 85%;
+  position: relative;
+}
+.protect .protect-item .protect-left p::after, .protect .protect-item .protect-right p::after {
+  content: "\f10e";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 800;
+  font-size: 13rem;
+  color: #2C2C2C;
+  opacity: 0.1000000015;
+  position: absolute;
+  bottom: -5rem;
+  right: 0;
+}
+.products-tab {
+  display: none;
+}
+
+.about-brand {
+  display: none;
+}
+
+.home {
+  display: none;
+}
+
+input[id=slide]:checked ~ .home, .form-input [id=slide].message:checked ~ .home {
+  display: block;
+}
+
+input[id=slide1]:checked ~ .about-brand, .form-input [id=slide1].message:checked ~ .about-brand {
+  display: block;
+}
+
+input[id=slide2]:checked ~ .products-tab, .form-input [id=slide2].message:checked ~ .products-tab {
+  display: block;
+}
+
+@media only screen and (max-width: 991.98px) {
   /*Header*/
   .container {
     padding: 0 1.5rem;
@@ -678,7 +1269,7 @@ ul, ol {
   }
   .header .header-logo {
     text-align: center;
-    margin-left: 5rem;
+    margin-left: 10rem;
   }
   .header .header-menu {
     display: block;
@@ -787,14 +1378,9 @@ ul, ol {
     padding: 10rem 2rem;
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap;
-    align-items: baseline;
-    column-gap: 1rem;
-  }
-  .achievement .achievement-content .achievement-pink-content {
-    width: 30%;
-    height: 100%;
-    margin: 0 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 0;
   }
   .achievement .achievement-content .achievement-pink-content .achievement-item .achievement-content-title, .achievement .achievement-content .achievement-pink-content .achievement-item .achievement-content-txt {
     font-size: 4rem;
@@ -809,10 +1395,6 @@ ul, ol {
     margin-top: 3rem;
     line-height: 2.45rem;
     color: #2C2C2C;
-  }
-  .achievement .achievement-content .achievement-green-content {
-    width: 30%;
-    height: 100%;
   }
   .achievement .achievement-content .achievement-green-content .achievement-item .achievement-content-title, .achievement .achievement-content .achievement-green-content .achievement-item .achievement-content-txt {
     font-size: 4rem;
@@ -902,7 +1484,7 @@ ul, ol {
     color: #000;
   }
   .btn-products-detail {
-    display: block;
+    display: flex;
     margin-top: 3.2rem;
     padding: 1.6rem 1.4rem;
     background-color: #46B20F;
@@ -940,6 +1522,41 @@ ul, ol {
   }
   /*service*/
   /*form*/
+  .form-img {
+    display: none;
+  }
+  .form {
+    padding: 0 2rem;
+  }
+  .form .form-title {
+    text-align: center;
+    font-size: 2.2rem;
+  }
+  .form-input input, .form-input .message {
+    font-size: 1.6rem;
+    padding: 1.4rem;
+  }
+  .form-btn {
+    margin-top: 3rem;
+  }
+  .form-btn .btn-form {
+    font-size: 1.8rem;
+  }
+  /*footer*/
+  .footer {
+    padding: 2rem 2rem;
+  }
+  .footer .footer-logo-wrap {
+    display: none;
+  }
+  .footer .footer-content {
+    text-align: center;
+  }
+  .footer .footer-content .flex-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .footer {
   background-color: #F2FFEC;
@@ -979,7 +1596,7 @@ ul, ol {
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 2.45rem;
-  width: 60%;
+  width: 70%;
 }
 .footer-content .flex-link {
   display: flex;
