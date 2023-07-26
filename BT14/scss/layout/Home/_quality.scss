@@ -37,23 +37,23 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     column-gap: 3rem;
+    justify-content: center;
     counter-reset: number;
 
     .quality-item {
-        width: 41.5rem;
-        height: 43.1rem;
         background-color: white;
         border-radius: 1rem;
-        margin-bottom: 12rem;
+        margin: 0 0 12rem 0;
+        padding: 0;
 
         .quality-detail {
             margin-top: 2.9rem;
+            margin-left: 3.3rem;
+            margin-bottom: 3.3rem;
+            margin-right: 2.2rem;
 
             .quality-list {
-                margin-left: 3.3rem;
-
                 .quality-detail-title {
                     color: #E05000;
                     font-size: 2.4rem;
@@ -69,7 +69,7 @@
 
                 .quality-detail-txt {
                     color: $textColor;
-                    font-size: 1.6rem;
+                    font-size: 1.5rem;
                     font-weight: 400;
                     line-height: 2.45rem;
                     margin-top: 0.8rem;
@@ -103,10 +103,10 @@
             margin-bottom: 7rem;
 
             .quality-detail {
-                margin-top: 2.9rem;
+                margin: 2.9rem auto 3.3rem auto;
+                padding: 0 3rem;
 
                 .quality-list {
-                    margin-left: 3.3rem;
 
                     .quality-detail-title {
                         color: #E05000;
@@ -123,7 +123,7 @@
 
                     .quality-detail-txt {
                         color: $textColor;
-                        font-size: 1.6rem;
+                        font-size: 1.5rem;
                         font-weight: 400;
                         line-height: 2.45rem;
                         margin-top: 0.8rem;
@@ -140,7 +140,7 @@
 
         &::after {
 
-            height: 86%;
+            height: 80%;
 
         }
     }
@@ -149,7 +149,6 @@
         margin-top: 16rem;
 
         .quality-item {
-
             margin-bottom: 6rem;
 
             .quality-detail {
@@ -160,11 +159,11 @@
     }
 }
 
-@media only screen and (max-width: 568px) {
+@media only screen and (max-width: 576px) {
     .quality {
         margin-top: 10rem;
         position: relative;
-    
+
         &::after {
             content: '';
             position: absolute;
@@ -175,31 +174,23 @@
             z-index: -1;
         }
     }
-    
+
     .quality-container {
         text-align: center;
         padding: 0 2.5rem;
-    
+
         .quality-txt {
             font-size: 1.4rem;
         }
     }
-    
+
     .quality-content {
         margin-top: 15rem;
 
         .quality-item {
             margin-bottom: 8rem;
-    
-            .quality-detail {
-                margin-top: 2.9rem;
-    
-                .quality-list {
-                   margin: 0 auto;
-                }
-            }
-    
+
         }
     }
-    
+
 }

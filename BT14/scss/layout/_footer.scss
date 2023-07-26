@@ -36,6 +36,7 @@
         display: flex;
         flex-direction: column;
         row-gap: 0.8rem;
+
         .footer-list-link {
             color: $textColor;
             font-size: 1.6rem;
@@ -51,6 +52,7 @@
         display: flex;
         align-items: center;
         column-gap: 1.2rem;
+
         span {
             color: $textColor;
             font-size: 1.6rem;
@@ -98,4 +100,35 @@
         }
     }
 
+}
+
+@media only screen and (max-width: 992.98px) {
+    .footer-logo-wrap {
+        display: none;
+    }
+    .footer-content-wrap {
+        display: flex;
+        justify-content: center;
+    }
+    .footer-content {
+        .footer-list {
+            .footer-list-link {
+                width: 100%;
+            }
+    
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .footer-content-wrap {
+        display: flex;
+        
+        .footer-content {
+            text-align: center;
+            .footer-list-item {
+                margin: 0 auto;
+            }
+        }
+    }
 }
