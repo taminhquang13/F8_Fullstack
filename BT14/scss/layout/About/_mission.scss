@@ -81,3 +81,21 @@
         }
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .mission {
+        margin-top: 12rem;
+
+        .mission-img {
+            @include flexCenterAll;
+            display: none;
+        }
+
+        .mission-detail {
+
+            row-gap: 3.2rem;
+            padding: 0 2.5rem;
+            
+        }
+    }
+}

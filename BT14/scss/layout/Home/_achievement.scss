@@ -208,31 +208,18 @@
 
         .achievement-title {
             width: 75%;
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 5rem;
+            margin-bottom: 3rem;
         }
 
         .achievement-txt {
             width: 80%;
             display: block;
             margin: 0 auto;
-            margin-top: 3rem;
-            font-size: 1.6rem;
-            font-weight: 400;
-            line-height: 2.45rem;
-            color: $textColor;
         }
     }
 
     .achievement-content {
-        position: relative;
-        margin-top: 3rem;
-        padding: 0;
-        @include flexCenterAll;
-        column-gap: 0;
-        flex-wrap: wrap;
-
+        
         &::before {
             display: none;
         }
@@ -247,6 +234,7 @@
         background: #FFF;
         box-shadow: -7px 10px 87px 0px rgba(54, 54, 54, 0.12);
         flex-direction: column;
+        width: 100%;
 
         .achievement-logo {
             margin: 70px 0 0 0;
@@ -270,13 +258,13 @@
         background: #FFF;
         box-shadow: -7px 10px 87px 0px rgba(54, 54, 54, 0.12);
         flex-direction: column;
-
+        width: 100%;
         .achievement-logo {
             margin: 70px 0 0 0;
             width: 10rem;
             height: 10rem;
             @include flexCenterAll;
-            background-color: #FFF0E7;
+            background-color: #F2FFEC;
             border-radius: 1.2rem
         }
 

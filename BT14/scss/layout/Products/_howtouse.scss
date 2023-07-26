@@ -63,6 +63,7 @@
     .how-to-use-content {
         margin-top: 12.4rem;
         flex-wrap: nowrap;
+
         .how-to-use-content-txt {
             margin-left: 13rem;
             position: relative;
@@ -74,6 +75,7 @@
             background-color: white;
             box-shadow: 31px 28px 124px rgba(0, 0, 0, 0.06);
             ;
+
             &::before {
                 content: '';
                 position: absolute;
@@ -91,9 +93,114 @@
             }
         }
 
-        .how-to-use-content-img{
+        .how-to-use-content-img {
             img {
                 width: 100vw;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .how-to-use {
+        .header-title {
+            margin-top: 12rem;
+            text-align: center;
+        }
+
+        .how-to-use-item {
+            margin-top: 6rem;
+
+            .list-detail {
+                .list-item {
+                    margin-bottom: 10rem;
+
+                    &::before {
+                        margin-top: 1.8rem;
+                        margin-right: 3rem;
+                    }
+
+                    &::after {
+                        width: 16.5rem;
+                        height: 16.5rem;
+                        left: 15.5rem;
+                        top: -1.5rem;
+                    }
+                }
+            }
+        }
+
+        .how-to-use-content {
+            flex-wrap: wrap;
+
+            .how-to-use-content-txt {
+                padding: 7.5rem;
+                margin-bottom: 6rem;
+                margin-left: 7.5rem;
+                margin-right: 7.5rem;
+
+                p {
+                    width: 100%;
+                }
+            }
+
+            .how-to-use-content-img {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .how-to-use {
+        .how-to-use-item {
+            .list-detail {
+                .list-item {
+
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .how-to-use-content {
+            margin-top: 8rem;
+            .how-to-use-content-txt {
+                padding: 6.5rem;
+                margin-bottom: 6rem;
+
+                p {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .how-to-use {
+        .how-to-use-item {
+            .list-detail {
+                .list-item {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .how-to-use-content {
+            margin-top: 2rem;
+            
+            
+            .how-to-use-content-txt {
+                padding: 7.5rem;
+                margin: 6rem;
+                margin-right: 3rem;
+                margin-left: 3rem;
             }
         }
     }
