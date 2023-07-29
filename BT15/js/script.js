@@ -16,7 +16,7 @@ console.log(s);
 
 // Bài 3
 var c = 1;
-var d = 2;
+var d = 10;
 var e = 3;
 
 if (c > d && c > e) {
@@ -28,10 +28,10 @@ if (c > d && c > e) {
 }
 
 // Bài 4
-var f = 1;
+var f = 5;
 var g = -1;
 
-if (f === g) {
+if ((f * g) > 0) {
     console.log(`Hai số cùng dấu`)
 } else {
     console.log(`Hai số khác dấu`)
