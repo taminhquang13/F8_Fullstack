@@ -1,9 +1,4 @@
 // Bài 1
-/*Tính tiền cước taxi dựa vào các điều kiện sau
-Số km ≤ 1 giá 15000đ
-1 < số km ≤ 5 giá 13500đ
-Số km > 5 giá 11000đ
-Nếu số km > 120 km sẽ được giảm 10% trên tổng số tiền*/
 
 function road(km) {
   var money;
@@ -21,6 +16,7 @@ function road(km) {
 console.log(`Tiền taxi của bạn là ${road(2)} `);
 
 // Bài 2
+
 function kWh(n) {
   if (n <= 50) {
     return n * 1678;
@@ -53,6 +49,7 @@ function kWh(n) {
 console.log(kWh(500));
 
 // Bài 3
+
 function findSum(n) {
   var sum = 0;
   var i = 0;
@@ -67,6 +64,7 @@ function findSum(n) {
 console.log(findSum(8));
 
 // Bài 4
+
 var n = 4;
 var check = true;
 
@@ -105,6 +103,7 @@ function count(n) {
 console.log(count(5));
 
 // Bài 6
+
 function chess() {
   var chess = "";
   for (var i = 1; i <= 8; i++) {
@@ -133,6 +132,7 @@ function chess() {
 console.log(chess());
 
 // Bài 7
+
 function bangcuuchuong() {
   var bangcuuchuong = "";
   for (var i = 1; i <= 10; i++) {
@@ -144,7 +144,9 @@ function bangcuuchuong() {
         }</span>`
       );
     }
+    bangcuuchuong += "\n";
   }
+
   return bangcuuchuong;
 }
 console.log(bangcuuchuong());
