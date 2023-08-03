@@ -116,9 +116,6 @@ function chess() {
       } else {
         chess += " s ";
         document.write(
-          `<td style="background-color: white; width: 50px; height: 50px">`
-        );
-        document.write(
           `<span style="display: inline-block; width: 50px; height: 50px; background-color: white;"></span>`
         );
       }
