@@ -1,76 +1,79 @@
-//Bài 1
-var number = [1, 2, 3, 4, 55, 6, 7, 8, 29, 10];
+// Bài 1
+var a = [1, 2, 3];
 
-var max = number[0];
-var min = number[0];
-var countMax = 0;
-var countMin = 0;
+var max = a[0];
+var min = a[0];
+var indexMax = 0;
+var indexMin = 0;
 
-for (var i = 0; i < number.length; i++) {
-  if (number[i] > max) {
-    max = number[i];
-    countMax = i;
-  } else if (number[i] < min) {
-    min = number[i];
-    countMin = i;
+for (var i = 0; i < a.length; i++) {
+  if (a[i] > max) {
+    max = a[i];
+    indexMax = i;
+  }
+  if (a[i] < min) {
+    min = a[i];
+    indexMin = i;
   }
 }
-console.log(number);
-console.log(`số lớn nhất là ${max} tại vị trí ${countMax}`);
-console.log(`số nhỏ nhất là ${min} tại vị trí ${countMin}`);
+
+console.log(`Số lớn nhất là ${max}`);
+console.log(`Số nhỏ nhất là ${min}`);
+console.log(`Vị trí số lớn nhất là ${indexMax}`);
+console.log(`Vị trí số nhỏ nhất là ${indexMin}`);
 
 // Bài 2
-var number1 = [1, 2, 3, 4, 55, 6, 7, 8, 29, 10];
+var b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
 var sum = 0;
 var count = 0;
 
-for (var i = 0; i < number1.length; i++) {
+for (var i = 0; i < b.length; i++) {
   var check = true;
-  if (number1[i] < 2) {
+  if (b[i] < 2) {
     check = false;
-  } else if (number[i] === 2) {
+  } else if (b[i] === 2) {
     check = true;
   } else {
-    for (var j = 2; j < number1[i]; j++) {
-      if (number1[i] === j) {
+    for (var j = 2; j < b.length; j++) {
+      if (b.length % j === 0) {
         check = false;
         break;
       }
     }
   }
   if (check) {
-    sum += number1[i];
+    sum += b[i];
     count++;
   }
 }
 
-console.log(`Só tổng số nguyên tố là ${sum}`);
-console.log(`Trung bình các số nguyên tố là ${sum / count}`);
+console.log(`Trung bình cộng só nguyên là ${sum / count}`);
 
 // Bài 3
-var number2 = [1, 2, 4, 4, 55, 6, 7, 8, 55, 10];
+var c = [1, 3, 3, 4, 5, 2, 6, 2];
 
 var newArr = [];
-for (var i = 0; i < number2.length; i++) {
-  if (newArr.indexOf(number2[i]) === -1) {
-    newArr.push(number2[i]);
+
+for (var i = 0; i < c.length; i++) {
+  if (newArr.indexOf(c[i]) === -1) {
+    newArr.push(c[i]);
   }
 }
 console.log(newArr);
 
-// bài 4
+// Bài 4
+var arr = [1, 3, 3, 4, 5, 2, 6, 2];
+arr.push(2);
 
-var number2 = [1, 3, 3, 4, 5, 2, 6, 2];
-number2.push(2);
-
-for (var i = 0; i < number2.length; i++) {
-  for (var j = i + 1; j < number2.length; j++) {
-    if (number2[i] > number2[j]) {
-      var temp = number2[i];
-      number2[i] = number2[j];
-      number2[j] = temp;
+for (var i = 0; i < arr.length; i++) {
+  for (var j = i + 1; j < arr.length; j++) {
+    if (arr[i] > arr[j]) {
+      var temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
     }
   }
 }
-console.log(number2);
+console.log(arr);
+

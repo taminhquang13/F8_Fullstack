@@ -22,4 +22,4 @@ setInterval(function () {
   var random = color[i];
   content.style.color = random;
   i++;
-}, 50);
+}, 70);

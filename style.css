@@ -9,8 +9,10 @@
     margin: 100px auto;
 }
 .button {
-  width: 100px;
-  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
 }
 
 .btn a {
