@@ -112,3 +112,4 @@ handleRegister("Nguyen Van B", "123456", "nguyenvanb@email.com");
 handleRegister("ThTrueMilk", "123456");
 console.log(data);
 console.log(handleLogin("nguyenvana@email.com", "123456"));
+  

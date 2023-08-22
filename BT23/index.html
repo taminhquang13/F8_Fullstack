@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập về nhà 23</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+          <a href="#" class="link-logo"
+            ><img
+              src="https://cdnweb.dantri.com.vn/dist/static-logo.1-0-1.742f36bc45f3443d0e59.svg"
+              alt="logo"
+              class="logo-img"
+          /></a>
+        </div>
+        <div class="content">
+          <a href="#" class="logo-item">
+            <img
+              src="https://cdnweb.dantri.com.vn/dist/static-fica-logo.1-0-1.2435f041ebf869641575.jpg"
+              alt="fica"
+              class="fica-logo"
+            />fica
+          </a>
+          <a href="#" class="logo-item">
+            <img
+              src="https://cdnweb.dantri.com.vn/dist/static-avatar-default.1-0-1.b474c6ca2d1abee5b89b.png"
+              alt=""
+              class="dt-logo"
+            />DTiNews
+          </a>
+          <div class="weather">
+            <div class="weather-wrap">
+              <span class="location"> Hà Nội </span>
+              <span class="date">Thứ 3, 22/08/2023</span>
+            </div>
+            <i class="fa-solid fa-star icon-header"></i>
+            <span class="weather-item">33°C</span>
+          </div>
+          <div class="login-header">
+            <button class="btn-login-header" type="button">
+              Đăng nhập <i class="fa-solid fa-user login-icon"></i>
+            </button>
+          </div>
+          <div class="search"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </div>
+      </div>
+      <div class="modal-box">
+        <div class="modal">
+          <div class="login">
+            <button class="active" type="button">Đăng nhập</button>
+            <button class="no-active" type="button">Đăng ký</button>
+          </div>
+          <div class="modal-form-login" id="form-login">
+            <p class="form-txt">Với các tài khoản mạng xã hội</p>
+            <div class="form-social">
+              <button class="google" type="button">
+                <i class="fab fa-google"></i>
+                <span>Google</span>
+              </button>
+              <button class="facebook" type="button">
+                <i class="fab fa-facebook-f"></i>
+                <span>Facebook</span>
+              </button>
+            </div>
+            <div class="or">
+              <span>hoặc</span>
+            </div>
+            <div class="form">
+              <div class="email">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  id="email"
+                  class="email-input"
+                />
+                <p class="error warring"></p>
+              </div>
+              <div class="password">
+                <label for="password">Password</label>
+                <div class="password-form">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    id="password"
+                    class="password-input"
+                  />
+                  <div class="btn-show">
+                    <i class="fa-solid fa-eye"></i>
+                  </div>
+                </div>
+                <p class="error error-pass warring"></p>
+              </div>
+              <div class="forgot">
+                <a href="#">Quên mật khẩu?</a>
+              </div>
+              <button type="button" class="btn-login">Đăng nhập</button>
+            </div>
+          </div>
+          <div class="modal-form-register hidden" id="form-register">
+            <p class="form-txt">
+              Hoàn thành đăng ký, và bắt đầu trải nghiệm ngay!
+            </p>
+            <div class="form">
+              <div class="name">
+                <label for="name">Họ và tên</label>
+                <input
+                  type="text"
+                  placeholder="Họ và tên"
+                  name="name"
+                  id="name"
+                  class="name-input"
+                />
+                <p class="error error-name warring"></p>
+              </div>
+              <div class="email">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  id="email"
+                  class="email-input"
+                />
+                <p class="error error-email warring"></p>
+              </div>
+              <div class="password">
+                <label for="password">Password</label>
+                <div class="password-form">
+                  <input
+                    type="password"
+                    placeholder="Mật khẩu"
+                    name="password"
+                    id="password"
+                    class="password-input"
+                  />
+                  <div class="btn-show btn-register">
+                    <i class="fa-solid fa-eye"></i>
+                  </div>
+                </div>
+                <p class="error error-pass warring"></p>
+              </div>
+              <div class="rules">
+                Bằng cách đăng ký tài khoản, bạn cũng đồng thời chấp nhận mọi
+                <a href="#">điều kiện về qui định và chính sách của Dân trí</a>
+              </div>
+              <button type="button" class="btn-login">Đăng ký</button>
+            </div>
+          </div>
+        </div>
+        <div class="overlay"></div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
