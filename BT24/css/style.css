@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    background-color: #8758ff;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+.content {
+    margin: auto;
+
+    background-color: #1a1a40;
+    text-align: center;
+    border-radius: 5px;
+    padding: 32px;
+}
+
+.title {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.todo-form {
+    display: flex;
+}
+
+.task-input {
+    background: none;
+    border: 1px solid #8758ff;
+    color: #ffffff;
+    outline: none;
+    width: 300px;
+    margin-top: 16px;
+    margin-bottom: 32px;
+    padding: 8px 16px;
+    font-size: 18px;
+}
+
+.btn {
+    background: #8758ff;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 9px;
+    display: inline-block;
+    margin-top: 16px;
+    margin-bottom: 32px;
+    font-size: 18px;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8758ff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+.todo-item p {
+    color: #fff;
+}
+
+.icon-btn {
+    font-size: 20px;
+    display: flex;
+    gap: 10px;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+.remove-todo,
+.edit-todo {
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
