@@ -25,7 +25,8 @@ todoForm.addEventListener("submit", function (e) {
 todoList.addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.classList.contains("remove-todo")) {
-    e.parentElement.parentElement.remove();
+    console.log(e.target.parentElement.parentElement);
+    e.target.parentElement.parentElement.remove();
   }
   if (e.target.classList.contains("edit-todo")) {
     var html = `<form class="todo-form">
