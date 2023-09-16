@@ -37,14 +37,14 @@ var count = 1;
 var renderList = function () {
   topics.forEach(function (topic, index) {
     var html1 = `<div class="list-items bg"  draggable="true">
-          <span>Module ${index + 1}:</span>
-          <span >${topic}</span>
+          <span class="title-value-bg">Module ${index + 1}:</span>
+          <span class="text-value">${topic}</span>
         </div>`;
     tableList.innerHTML += html1;
     items[index].topic.forEach(function (item) {
       var html2 = `<div class="list-items" draggable="true">
-            <span >Bài ${count++}:</span>
-            <span >${item}</span>
+            <span class="title-value" >Bài ${count++}:</span>
+            <span class="text-value">${item}</span>
             </div>`;
       tableList.innerHTML += html2;
     });
@@ -66,9 +66,9 @@ listItems.forEach(function (item) {
 
 tableList.addEventListener("dragover", function (e) {
   e.preventDefault();
+  console.log(e.clientY);
   var dragging = document.querySelector(".dragging");
   var notDragging = document.querySelectorAll(".list-items:not(.dragging)");
-  console.log(notDragging.offsetTop);
   var afterEL = [...notDragging].filter(function (item) {
     return item.offsetTop > e.clientY;
   });
@@ -80,3 +80,13 @@ tableList.addEventListener("dragover", function (e) {
   }
 });
 
+tableList.addEventListener("dragend", function (e) {
+  var titleValue = document.querySelectorAll(".title-value-bg");
+  var textValue = document.querySelectorAll(".title-value");
+  titleValue.forEach(function (title, index) {
+    title.innerHTML = `Module ${++index}:`;
+  });
+  textValue.forEach(function (text, index) {
+    text.innerHTML = `Bài ${++index}:`;
+  });
+});
