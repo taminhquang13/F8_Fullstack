@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f1f1f1;
+}
+
+.table-list {
+    border-radius: 12px;
+    background-color: #0093e9;
+    padding: 12px;
+    width: 50%;
+    margin: 20px auto;
+}
+
+.list-items {
+    margin: 10px;
+    padding: 10px;
+    background-color: #64bff3;
+    color: black;
+    border: 1px solid #fff;
+}
+
+.bg {
+    background-color: pink;
+}
+
+span {
+    font-size: 18px;
+}
