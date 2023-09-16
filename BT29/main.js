@@ -37,14 +37,14 @@ var count = 1;
 var renderList = function () {
   topics.forEach(function (topic, index) {
     var html1 = `<div class="list-items bg"  draggable="true">
-          <span class="text-value">Module ${index + 1}:</span>
-          <span class="text-content">${topic}</span>
+          <span>Module ${index + 1}:</span>
+          <span >${topic}</span>
         </div>`;
     tableList.innerHTML += html1;
     items[index].topic.forEach(function (item) {
       var html2 = `<div class="list-items" draggable="true">
-            <span class="text-value">Bài ${count++}:</span>
-            <span class="text-content">${item}</span>
+            <span >Bài ${count++}:</span>
+            <span >${item}</span>
             </div>`;
       tableList.innerHTML += html2;
     });
