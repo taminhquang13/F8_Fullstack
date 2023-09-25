@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+}
+
+.content {
+    background-color: #03bdf0;
+}
+
+.timer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn {
+    width: 100px;
+    height: 50px;
+    border-radius: 99px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.count {
+    font-size: 80px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 40px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
