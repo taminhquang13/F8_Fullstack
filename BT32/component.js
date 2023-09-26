@@ -82,7 +82,7 @@ class F8 {
           }
           if (checkClick === "title") {
             item.addEventListener("click", () => {
-              if (count >= 0) {
+              if (count > 0) {
                 h1.innerText = `Vịt đã được thanh toán ${count} con`;
                 h2.innerText = "0";
                 count = 0;
