@@ -26,7 +26,6 @@ function handleSpeech() {
   };
 
   recognition.onresult = function (e) {
-    messageEl.textContent = "Đợi 1 tí sẽ có kết quả";
 
     const handleText = e.results[0][0].transcript.toLowerCase();
     const textEl = document.createElement("div");
