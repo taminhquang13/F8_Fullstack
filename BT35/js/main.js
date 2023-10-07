@@ -8,7 +8,7 @@ const getPost = async (query = {}) => {
   render(data);
 };
 let page = 1;
-let limit = 3;
+let limit = 2;
 let isLoading = false;
 let totalPost = 0;
 getPost({
@@ -77,18 +77,23 @@ async function handleShowPost() {
   loadingEl.classList.add("loading");
   loadingEl.innerText = "Loading...";
   postsEl.append(loadingEl);
-  page++;
-  await getPost({
-    _page: page,
-    _limit: limit,
-  });
-  isLoading = false;
-  loadingEl.remove();
+  setTimeout(async () => {
+    page++;
+    await getPost({
+      _page: page,
+      _limit: limit,
+    });
+    isLoading = false;
+    loadingEl.remove();
+  }, 1000);
 }
 
 window.addEventListener("scroll", () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
   if (scrollTop + clientHeight >= scrollHeight - 10) {
     handleShowPost();
+  }
+  if (scrollTop + clientHeight >= scrollHeight) {
+    console.log("end");
   }
 });
