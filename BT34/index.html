@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title"><span class="title-span">Smatyx</span> Todos App</h1>
+      <div class="search-bar">
+        <div class="search">
+          <input type="text" class="search-input" placeholder="Search" />
+          <button class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <button class="search-btn add-todo">Add todos</button>
+      </div>
+      <div class="list-item"></div>
+      <div class="count-finished">
+        <button class="show-finished">
+          Completed todos <span class="count">0</span>
+        </button>
+      </div>
+      <div class="list-item-completed"></div>
+      <div class="add-todo-check hiden">
+        <input type="text" class="add-todo-input" placeholder="Add todo" />
+        <hr />
+        <div class="btn-action">
+          <button class="save-btn">SAVE</button>
+          <button class="cancel-btn">CANCEL</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
