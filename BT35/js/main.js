@@ -10,7 +10,7 @@ const getPost = async (query = {}) => {
 let page = 1;
 let limit = 2;
 let isLoading = false;
-let totalPost = 0;
+
 getPost({
   _page: page,
   _limit: limit,
@@ -69,31 +69,30 @@ const render = (posts) => {
 };
 
 //infinitive scroll
-
+const loadingEl = document.createElement("div");
 async function handleShowPost() {
   if (isLoading) return;
   isLoading = true;
-  const loadingEl = document.createElement("div");
+
   loadingEl.classList.add("loading");
   loadingEl.innerText = "Loading...";
   postsEl.append(loadingEl);
-  setTimeout(async () => {
-    page++;
-    await getPost({
-      _page: page,
-      _limit: limit,
-    });
-    isLoading = false;
-    loadingEl.remove();
-  }, 1000);
+
+  page++;
+  await getPost({
+    _page: page,
+    _limit: limit,
+  });
+
+  isLoading = false;
+  loadingEl.remove();
+
+  //if render all data remove loadingEl
 }
 
 window.addEventListener("scroll", () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
   if (scrollTop + clientHeight >= scrollHeight - 10) {
     handleShowPost();
-  }
-  if (scrollTop + clientHeight >= scrollHeight) {
-    console.log("end");
   }
 });
