@@ -1,5 +1,6 @@
 import { config } from "./config.js";
 const { SERVER_API } = config;
+// Định nghĩa các phương thức call api
 export const client = {
   serverApi: SERVER_API,
   setUrl: function (url) {
@@ -7,9 +8,11 @@ export const client = {
   },
   send: async function (url, method = "GET", body = null, token = null) {
     url = `${this.serverApi}${url}`;
+
     const headers = {
       "Content-Type": "application/json",
     };
+
     if (token) {
       headers["Authorization"] = `Bearer ${token}`;
     }
@@ -17,10 +20,12 @@ export const client = {
       method,
       headers,
     };
-    if (body != null) {
+
+    if (body !== null) {
       options.body = JSON.stringify(body);
     }
     const response = await fetch(url, options);
+
     const data = await response.json();
     return { response, data };
   },

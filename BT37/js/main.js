@@ -1,6 +1,13 @@
 import { config } from "./config.js";
 import { client } from "./client.js";
+const limitPostInPage = 10;
+let page = 1;
+const loadMore = false;
+const { SERVER_AUTH_API } = config;
+client.setUrl(SERVER_AUTH_API);
 
+const loginContainer = document.querySelector(".login-container");
+const container = document.querySelector(".container");
 const wrapper = document.querySelector(".wrapper"),
   signupHeader = document.querySelector(".signup header"),
   loginHeader = document.querySelector(".login header");
@@ -12,222 +19,270 @@ signupHeader.addEventListener("click", () => {
   wrapper.classList.remove("active");
 });
 
-const { SERVER_AUTH_API } = config;
-console.log(SERVER_AUTH_API);
+//sign in and go back
+const signInBtn = document.querySelector(".signin button");
+signInBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  loginContainer.classList.remove("hidden");
+  container.classList.add("hidden");
+});
 
-client.setUrl(SERVER_AUTH_API);
-
-const loginContainer = document.querySelector(".login-container");
-const root = document.querySelector("#root");
-const container = document.createElement("div");
-container.classList.add("container");
-root.append(container);
-const postForm = document.createElement("div");
-
-
-const render = (post) => {
-  //titles
-  const titles = document.createElement("div");
-  titles.classList.add("titles");
-  const h1 = document.createElement("h1");
-  h1.innerText = "Blogs";
-  titles.append(h1);
-  container.append(titles);
-
-  //create post
-  const createPost = document.createElement("div");
-  createPost.append(postForm);
-  container.append(createPost);
-  //logins
-  const btnLogin = document.createElement("button");
-  btnLogin.classList.add("login-btn");
-  btnLogin.classList.add("signin-btn");
-  btnLogin.innerText = "Đăng nhập";
-  btnLogin.addEventListener("click", () => {
-    loginContainer.classList.remove("hidden");
-    container.classList.add("hidden");
-  });
-  container.append(btnLogin);
-
-  //Blogs
-  const blogsContainer = document.createElement("div");
-  blogsContainer.classList.add("blogs-container");
-  container.append(blogsContainer);
-  post.data.forEach(({ id, title, content, userId, createdAt }) => {
-    if (blogsContainer) {
-      const postContainer = document.createElement("div");
-      postContainer.classList.add("post-container");
-      blogsContainer.append(postContainer);
-
-      //name
-      const userName = document.createElement("div");
-      userName.classList.add("user-name");
-      userName.innerText = userId.name;
-
-      //date
-      const date = new Date(createdAt);
-      const dateStr = `${date.getDate()} - ${
-        date.getMonth() + 1
-      } - ${date.getFullYear()} | ${date.getHours()}:${date.getMinutes()}`;
-
-      const spanDate = document.createElement("span");
-      spanDate.classList.add("date");
-      spanDate.innerText = dateStr;
-
-      // title
-      const postTitle = document.createElement("div");
-      postTitle.classList.add("post-title");
-      const h2 = document.createElement("h2");
-      const a = document.createElement("a");
-      a.innerText = title;
-      a.href = `#`;
-      h2.append(a);
-      postTitle.append(h2);
-
-      //content
-      const postContent = document.createElement("div");
-      postContent.classList.add("post-content");
-      const p = document.createElement("p");
-      p.innerText = content;
-      postContent.append(p);
-
-      postContainer.append(userName);
-      postContainer.append(spanDate);
-      postContainer.append(postTitle);
-      postContainer.append(postContent);
-
-      const hr = document.createElement("hr");
-      blogsContainer.append(hr);
-    }
-  });
-};
-
-let dataBlogs = [];
-const getBlogs = async (query = {}) => {
-  const queryString = new URLSearchParams(query).toString();
-  const { response, data } = await client.get(`/blogs?${queryString}`);
-  if (response.ok) {
-    dataBlogs = data;
-    console.log(dataBlogs);
-    render(data);
-  }
-};
-
-getBlogs();
-const renderForm = () => {
+const goBackBtn = document.querySelector(".go-back");
+goBackBtn.addEventListener("click", (e) => {
+  e.preventDefault();
   loginContainer.classList.add("hidden");
+  container.classList.remove("hidden");
+});
 
-  const formEl = document.createElement("div");
+//check value input
+var signupNameEl = document.querySelector(".signup-name"),
+  signupEmailEl = document.querySelector(".signup-email"),
+  signupPasswordEl = document.querySelector(".signup-password"),
+  loginEmailEl = document.querySelector(".login-email"),
+  loginPasswordEl = document.querySelector(".login-password"),
+  checkEmailEl = document.querySelector(".check-email"),
+  checkPasswordEl = document.querySelector(".check-password"),
+  checkNameEl = document.querySelector(".check-name");
 
-  const html = `
-  <form class="post-article">
-          <div class="form-title">
-            <label for="title" class="label-form">Tiêu đề bài viết</label>
-            <input id="title" placeholder="Nhập tiêu đề bài viết" />
-          </div>
-          <div class="form-content">
-            <label for="content" class="label-form"
-              >Nhập nội dung bài viết</label
-            >
-            <textarea name="" id="content" cols="30" rows="10"></textarea>
-          </div>
-          <button class="submit-article">Submit</button>
-          </form>
-        `;
-
-  formEl.innerHTML = html;
-
-  const form = formEl.querySelector(".post-article");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const title = document.querySelector("#title").value;
-    const content = document.querySelector("#content").value;
-    const data = {
-      title,
-      content,
-    };
-    if (title && content) {
-      createPost(data);
-      document.querySelector("#title").value = "";
-      document.querySelector("#content").value = "";
-    }
-  });
-
-  const btn = document.createElement("button");
-  btn.classList.add("logout");
-  btn.innerText = "Đăng xuất";
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    localStorage.removeItem("access_token");
-    localStorage.removeItem("refresh_token");
-    window.location.reload();
-  });
-
-  postForm.append(btn);
-  postForm.append(formEl);
-};
-
-async function createPost(title, content) {
-  const { response } = await client.post("/blogs", { title, content });
-  if (response.ok) {
-    getBlogs();
+function checkValueInput() {
+  if (signupNameEl.value.length < 1) {
+    checkNameEl.innerHTML = "Name không được để trống";
+  }
+  if (signupEmailEl.value.length < 1) {
+    checkEmailEl.innerHTML = "Email không được để trống";
+  }
+  if (signupPasswordEl.value.length < 1) {
+    checkPasswordEl.innerHTML = "Password không được để trống";
   }
 }
 
-//signin
-async function signin(email, password) {
-  const { response, data } = await client.post("/auth/login", {
+if (signupNameEl) {
+  signupNameEl.addEventListener("input", () => {
+    if (signupNameEl.value.length < 1) {
+      checkValueInput();
+    } else {
+      checkNameEl.innerHTML = "";
+    }
+  });
+}
+if (signupEmailEl) {
+  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  signupEmailEl.addEventListener("input", () => {
+    if (!regex.test(signupEmailEl.value)) {
+      checkEmailEl.innerHTML = "Email không hợp lệ";
+    } else if (signupEmailEl.value.length < 1) {
+      checkValueInput();
+    } else {
+      checkEmailEl.innerHTML = "";
+    }
+  });
+}
+
+if (signupPasswordEl) {
+  signupPasswordEl.addEventListener("input", () => {
+    if (signupPasswordEl.value.length < 6) {
+      checkPasswordEl.innerHTML = "Password phải có ít nhất 6 ký tự";
+    } else if (signupPasswordEl.value.length < 1) {
+      checkValueInput();
+    } else {
+      checkPasswordEl.innerHTML = "";
+    }
+  });
+}
+
+// submit login form
+const formLoginEl = document.querySelector(".form-login");
+formLoginEl.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = loginEmailEl.value;
+  const password = loginPasswordEl.value;
+  signIn(email, password);
+  loginContainer.classList.add("hidden");
+  container.classList.remove("hidden");
+  const btnSignIn = container.querySelector(".btn-signin");
+  btnSignIn.classList.add("hidden");
+  const linkEl = document.querySelector(".link");
+  linkEl.classList.remove("hidden");
+  const createPost = document.querySelector(".create-post");
+  createPost.classList.remove("hidden");
+});
+
+// get user
+async function getUser() {
+  const { data: getUserData } = await client.get(
+    "/users/profile",
+    localStorage.getItem("access_token")
+  );
+  const userName = getUserData.data.name;
+  const nameEl = document.querySelector(".name-user");
+  nameEl.innerHTML = userName;
+  console.log(getUserData.data.name);
+}
+
+// submit signup form
+const formSignupEl = document.querySelector(".form-signup");
+formSignupEl.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = signupEmailEl.value;
+  const password = signupPasswordEl.value;
+  const name = signupNameEl.value;
+  signup(email, password, name);
+});
+
+const getBlogs = async (query = {}) => {
+  client.setUrl(SERVER_AUTH_API);
+  const queryStr = new URLSearchParams(query).toString();
+  const { data } = await client.get(`/blogs?${queryStr}`);
+
+  renderBlogs(data);
+  return data;
+};
+
+// log out btn
+
+getBlogs();
+
+const renderBlogs = (post) => {
+  const blogList = document.querySelector(".blog-list");
+  blogList.innerHTML = "";
+  if (post.length === 0) {
+    alert("Không có bài viết nào");
+  } else {
+    post.data.forEach(({ title, content, userId, createdAt }) => {
+      const { name } = userId;
+      console.log(name);
+      const createTime = new Date(createdAt);
+      const createdValue = `${createTime.getDate()} - ${
+        createTime.getMonth() + 1
+      } - ${createTime.getFullYear()} | ${createTime.getHours()}:${
+        createTime.getMinutes() < 10
+          ? "0" + createTime.getMinutes()
+          : createTime.getMinutes()
+      }`;
+
+      const blogItem = document.createElement("div");
+      blogItem.classList.add("blog-item");
+      blogItem.innerHTML = `
+      <div class="blog-item__author d-flex gap-3">
+        <span class="rounded-circle bg-success avatar">V</span><p>${name}</p>
+      </div>
+      <div class="blog-item__title">
+        <h3>${title}</h3>
+      </div>
+      <div class="blog-item__content">
+        <p>${content}</p>
+      </div>
+      <div class="blog-item__created">
+        <p>${createdValue}</p>
+      </div>
+      `;
+      //read more
+      const readMoreBtn = document.createElement("button");
+      readMoreBtn.classList.add("btn", "btn-primary", "read-more");
+      readMoreBtn.innerText = "Read more";
+      blogItem.append(readMoreBtn);
+      blogList.append(blogItem);
+    });
+  }
+};
+
+// sign in
+async function signIn(email, password) {
+  const { data: tokens } = await client.post("/auth/login", {
     email,
     password,
   });
-  if (response.ok) {
-    localStorage.setItem("access_token", data.access_token);
-    localStorage.setItem("refresh_token", data.refresh_token);
-    renderForm();
-    container.classList.remove("hidden");
-    loginContainer.classList.add("hidden");
-    const loginBtn = document.querySelector(".signin-btn");
-    loginBtn.classList.add("hidden");
+  if (tokens.data) {
+    localStorage.setItem("access_token", tokens.data.accessToken);
+    localStorage.setItem("refresh_token", tokens.data.refreshToken);
+    getUser();
+    getBlogs();
+  } else {
+    alert("Đăng nhập thất bại");
   }
 }
 
-//signup
+// Sign up
 async function signup(email, password, name) {
-  const { data: tokens } = await client.post("/auth/register", {
+  const { data: response } = await client.post("/auth/register", {
     email,
     password,
     name,
   });
-
-  if (tokens.status_code === "FAILED") {
-    alert("Please try again");
+  if (response.status_code === "SUCCESS") {
+    alert(response.message);
+    wrapper.classList.add("active");
   } else {
-    alert("OK");
+    alert(response.message);
   }
 }
 
-const formLogin = loginContainer.querySelector(".login");
-const formSignup = loginContainer.querySelector(".signup");
+// logout
 
-const loginBtn = formLogin.querySelector(".login-btn");
-const signupBtn = formSignup.querySelector(".signup-btn");
-
-loginBtn.addEventListener("click", (e) => {
+const logoutBtn = document.querySelector(".logout");
+logoutBtn.addEventListener("click", async (e) => {
   e.preventDefault();
-  const email = formLogin.querySelector("input[type=email]").value;
-  const password = formLogin.querySelector("input[type=password]").value;
-  signin(email, password);
+  const token = localStorage.getItem("access_token");
+  console.log(token);
+  const { data } = await client.post("/auth/logout", {}, token);
+  console.log(data);
+  if (data.code === 200) {
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("refresh_token");
+  } else {
+    refreshToken().then(async (refresh) => {
+      if (refresh.code === 200) {
+        const { data } = await client.post(
+          "/auth/logout",
+          {},
+          localStorage.getItem("access_token")
+        );
+      }
+      localStorage.removeItem("access_token");
+      localStorage.removeItem("refresh_token");
+    });
+  }
 });
+// refresh token
+async function refreshToken() {
+  const refreshToken = localStorage.getItem("refresh_token");
+  const { data: tokens } = await client.post("/auth/refresh-token", {
+    refreshToken,
+  });
+  if (tokens.code === 200) {
+    localStorage.setItem("access_token", tokens.data.token.accessToken);
+    localStorage.setItem("refresh_token", tokens.data.token.refreshToken);
+    renderBlogs();
+  } else {
+    alert("Đăng nhập thất bại");
+  }
+  return tokens;
+}
 
-signupBtn.addEventListener("click", (e) => {
+// create a new post
+async function createPost(title, content, token) {
+  const { data } = await client.post("/blogs", { title, content }, token);
+  if (data.code === 200) {
+    alert("Đăng bài thành công");
+    renderBlogs();
+  } else {
+    refreshToken().then(async (refresh) => {
+      if (refresh.code === 200) {
+        renderBlogs();
+      } else {
+        alert("Đăng nhập thất bại");
+      }
+    });
+  }
+}
+
+// submit create post
+const formCreatePostEl = document.querySelector(".create-post");
+formCreatePostEl.addEventListener("submit", (e) => {
   e.preventDefault();
-  const email = formSignup.querySelector("input[type=email]").value;
-  const password = formSignup.querySelector("input[type=password]").value;
-  const name = formSignup.querySelector("input[type=text]").value;
-  signup(email, password, name);
+  const title = document.getElementById("1").value;
+  const content = document.getElementById("2").value;
+  const token = localStorage.getItem("access_token");
+  createPost(title, content, token);
+  console.log(title, content);
 });
-
-// const token = localStorage.getItem("access_token");
-// if (token) {
-//   renderForm();
-// }
